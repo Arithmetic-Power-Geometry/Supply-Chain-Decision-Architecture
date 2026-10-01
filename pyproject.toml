@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supply-chain-decision-architecture"
+version = "0.1.0"
+description = "Reference implementation of a decision-centered architecture for supply chain management research."
+requires-python = ">=3.10"
+authors = [
+  {name = "Mohammad Amir Khusru Akhtar"}
+]
+license = {text = "Apache-2.0"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
