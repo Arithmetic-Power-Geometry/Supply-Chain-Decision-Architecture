@@ -21,7 +21,7 @@ jobs:
         run: python -m pip install -e .
 
       - name: Run tests
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest discover -s tests -p 'test*.py' -v
 
       - name: Run benchmark
         run: python benchmarks/run_benchmark.py
