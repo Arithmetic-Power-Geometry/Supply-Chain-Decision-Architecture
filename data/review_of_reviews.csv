@@ -1,0 +1,7 @@
+id,year,title,scope,corpus_size,framework_dimensions,method,doi_or_url,status,notes
+R001,2000,"Supply chain management: an analytical framework for critical literature review","General SCM",,"content;methodology","critical literature review","10.1016/S0969-7012(99)00030-1",seed,"Historical taxonomy baseline"
+R002,2001,"A framework of supply chain management literature","General SCM",,"literature paths;strategies","literature review","10.1016/S0969-7012(00)00020-4",seed,"Historical framework baseline"
+R003,2021,"Artificial intelligence applications in supply chain management","AI in SCM",,"sensing/interacting;learning;decision making","systematic review;bibliometric;co-citation","10.1016/j.ijpe.2021.108277",seed,"AI taxonomy baseline"
+R004,2024,"Artificial intelligence in supply chain management: A systematic literature review of empirical studies and research directions","Empirical AI in SCM",,"empirical themes","systematic literature review","10.1016/j.compind.2024.104132",seed,"Evidence-oriented AI review"
+R005,2025,"The Use of Artificial Intelligence in Supply Chain Management: Systematic Literature Review and Future Research Directions","AI/ML in SCM",109,"five clusters","systematic review;bibliometric","10.1109/ACCESS.2025.3603866",seed,"IEEE AI-SCM review"
+R006,2026,"A Systematic Review of Electric Vehicle Supply Chains: Challenges and Research Agenda","EV supply chains",501,"six themes;five cross-cutting challenges","PRISMA;content analysis;topic modeling","10.1109/TEM.2026.3679958",seed,"Recent IEEE TEM review model"
