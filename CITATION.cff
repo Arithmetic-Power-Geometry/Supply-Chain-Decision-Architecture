@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software or its research artifacts, please cite the repository."
+title: "Supply Chain Decision Architecture"
+version: 0.1.0
+date-released: 2026-10-01
+authors:
+  - family-names: "Akhtar"
+    given-names: "Mohammad Amir Khusru"
+repository-code: "https://github.com/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture"
+license: Apache-2.0
