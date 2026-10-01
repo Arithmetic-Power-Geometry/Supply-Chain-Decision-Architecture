@@ -1,0 +1,13 @@
+identifier,level,process,flow,objective,theory,method,technology,evidence,industry
+B01,strategic,plan,material,cost,systems,optimization,none,benchmark,manufacturing
+B02,strategic,plan,risk,resilience,systems,simulation,digital twin,simulation,manufacturing
+B03,operational,deliver,material,speed,operations,optimization,IoT,case study,retail
+B04,operational,deliver,information,service,information-processing,machine learning,AI platform,observational,retail
+B05,tactical,source,financial,cost,transaction-cost,empirical,ERP,observational,automotive
+B06,tactical,source,knowledge,trust,resource-based,empirical,blockchain,case study,automotive
+B07,real-time/autonomous,move,information,speed,systems,artificial intelligence,IoT,pilot,logistics
+B08,real-time/autonomous,recover,risk,resilience,systems,multi-agent/autonomous,digital twin,pilot,logistics
+B09,strategic,return,carbon,sustainability,systems,optimization,none,benchmark,manufacturing
+B10,operational,make,material,quality,operations,statistics,ERP,deployed,manufacturing
+B11,tactical,plan,information,service,information-processing,machine learning,cloud/edge,benchmark,healthcare
+B12,operational,store,material,cost,operations,optimization,RFID,deployed,healthcare
