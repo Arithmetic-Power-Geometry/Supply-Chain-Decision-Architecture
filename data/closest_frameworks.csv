@@ -6,3 +6,6 @@ CF004,2018,MCDM in SCM,"Khan Chaabane Dweiri",yes,yes,no,partial,no,yes,no,no,ye
 CF005,2021,IoT and BDA decision making,"IoT BDA SCM review",yes,yes,partial,partial,limited,yes,yes,partial,partial,"10.1016/j.cie.2020.107076"
 CF006,2024,Strategic SCM decisions,"Strategic decision taxonomy",yes,yes,partial,yes,partial,partial,limited,no,partial,"10.14483/22487638.18622"
 CF007,2026,Analytics adoption,"Analytics adoption review",yes,partial,partial,yes,partial,yes,yes,partial,partial,"10.1016/j.dajour.2026.100741"
+CF008,2018,Supply chain optimization,"Kocaoglu Gumus Kocaoglu",yes,yes,no,yes,no,yes,no,no,partial,""
+CF009,2018,Information in supply-chain decisions,"Value of information review",yes,yes,yes,partial,no,yes,limited,no,yes,""
+CF010,2023,Data science and big-data analytics in SC and logistics,"DS BDA systematic review",yes,yes,partial,partial,no,yes,yes,no,partial,"10.1007/s10479-023-05390-7"
