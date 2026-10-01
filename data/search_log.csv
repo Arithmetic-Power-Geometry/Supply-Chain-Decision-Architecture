@@ -1,0 +1,9 @@
+search_id,database,query_family,exact_query,fields,filters,execution_date,result_count,export_file,status,notes
+S001,Scopus,F1,"TITLE-ABS-KEY("supply chain management" OR "supply chain" OR "supply network")","title;abstract;keywords","journal articles; English",,,"",planned,"Execute in institutional Scopus access"
+S002,Web of Science,F1,"TS=("supply chain management" OR "supply chain" OR "supply network")","topic","article; English",,,"",planned,"Execute in WoS Core Collection"
+S003,Scopus,F2,"A AND decision/problem vocabulary from protocol v1","title;abstract;keywords","journal articles; English",,,"",planned,"Exact expanded syntax to be preserved at execution"
+S004,Web of Science,F2,"A AND decision/problem vocabulary from protocol v1","topic","article; English",,,"",planned,"Exact expanded syntax to be preserved at execution"
+S005,Scopus,F3,"A AND analytical/computational vocabulary from protocol v1","title;abstract;keywords","journal articles; English",,,"",planned,"Technology/analytics family"
+S006,Web of Science,F3,"A AND analytical/computational vocabulary from protocol v1","topic","article; English",,,"",planned,"Technology/analytics family"
+S007,Scopus,F4,"A AND management/theory vocabulary from protocol v1","title;abstract;keywords","journal articles; English",,,"",planned,"Management/theory family"
+S008,Web of Science,F4,"A AND management/theory vocabulary from protocol v1","topic","article; English",,,"",planned,"Management/theory family"
