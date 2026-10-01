@@ -1,0 +1,46 @@
+SCDA SYSTEMATIC SEARCH — WEB OF SCIENCE CORE COLLECTION — VERSION 1.0
+Freeze date: 2026-10-01
+
+S002 / F1 — Broad SCM
+TS=("supply chain management" OR "supply chain" OR "supply chains" OR "supply network" OR "supply networks")
+Refine: Document Types = Article; Languages = English
+
+S004 / F2 — Decisions and operations
+TS=(
+  ("supply chain management" OR "supply chain" OR "supply chains" OR "supply network" OR "supply networks")
+  AND
+  (decision* OR planning OR schedul* OR sourcing OR procurement OR production OR inventory
+   OR transport* OR logistics OR distribution OR fulfillment OR fulfilment OR coordination
+   OR collaboration OR disruption OR risk OR resilien* OR sustainab* OR circular*
+   OR visibility OR traceability)
+)
+Refine: Document Types = Article; Languages = English
+
+S006 / F3 — Analytics and computation
+TS=(
+  ("supply chain management" OR "supply chain" OR "supply chains" OR "supply network" OR "supply networks")
+  AND
+  (optim* OR simulation OR analytic* OR forecast* OR "machine learning" OR "artificial intelligence"
+   OR "deep learning" OR "digital twin" OR "digital twins" OR blockchain
+   OR "internet of things" OR IoT OR autonomous OR agent* OR "generative AI"
+   OR "large language model" OR "large language models")
+)
+Refine: Document Types = Article; Languages = English
+
+S008 / F4 — Management and theory
+TS=(
+  ("supply chain management" OR "supply chain" OR "supply chains" OR "supply network" OR "supply networks")
+  AND
+  (strategy OR strategic OR governance OR relationship* OR integration OR capability OR capabilities
+   OR performance OR trust OR collaboration OR organization* OR organisation*
+   OR theory OR theoretical OR empirical)
+)
+Refine: Document Types = Article; Languages = English
+
+EXECUTION RULES
+1. Use Web of Science Core Collection.
+2. Do not add a lower publication-year cutoff.
+3. At execution, cap coverage at the final 2026 search date where necessary.
+4. Record the exact result count before export.
+5. Export Full Record and Cited References where permitted; preserve DOI, abstract, author keywords, source, year, document type and accession identifier.
+6. Do not manually delete records from the export.
