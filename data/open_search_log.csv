@@ -1,0 +1,7 @@
+search_id,source,family,query,execution_datetime_utc,result_count,pages_or_cursor,raw_artifact,status,notes
+O001,OpenAlex,F1,"supply chain management",,,,,planned,
+O002,OpenAlex,F1,"supply chain",,,,,planned,
+O003,OpenAlex,F2,"supply chain decision planning sourcing procurement production inventory logistics coordination disruption risk resilience sustainability",,,,,planned,
+O004,OpenAlex,F3,"supply chain optimization simulation analytics forecasting machine learning artificial intelligence digital twin blockchain internet of things autonomous",,,,,planned,
+O005,OpenAlex,F4,"supply chain strategy governance integration capability performance trust collaboration theory empirical",,,,,planned,
+C001,Crossref,verification,"DOI/metadata verification of deduplicated OpenAlex candidates",,,,,planned,"Not a substitute discovery count"
