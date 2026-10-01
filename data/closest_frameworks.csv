@@ -1,0 +1,8 @@
+framework_id,year,scope,source,decision_level,process_or_function,flow,objective,theory,method,technology,evidence_maturity,industry_or_application,doi
+CF001,2000,General SCM,"Croom Romano Giannakis",no,yes,no,yes,yes,yes,no,no,partial,"10.1016/S0969-7012(99)00030-1"
+CF002,2014,Agrifood SCM,"Tsolakis et al.",yes,yes,no,partial,no,yes,no,no,yes,"10.1016/j.biosystemseng.2013.10.014"
+CF003,2014,Sustainable SCM,"Alexander Walker Naim",partial,partial,no,yes,yes,partial,no,no,partial,"10.1108/SCM-01-2014-0007"
+CF004,2018,MCDM in SCM,"Khan Chaabane Dweiri",yes,yes,no,partial,no,yes,no,no,yes,"10.5772/intechopen.74067"
+CF005,2021,IoT and BDA decision making,"IoT BDA SCM review",yes,yes,partial,partial,limited,yes,yes,partial,partial,"10.1016/j.cie.2020.107076"
+CF006,2024,Strategic SCM decisions,"Strategic decision taxonomy",yes,yes,partial,yes,partial,partial,limited,no,partial,"10.14483/22487638.18622"
+CF007,2026,Analytics adoption,"Analytics adoption review",yes,partial,partial,yes,partial,yes,yes,partial,partial,"10.1016/j.dajour.2026.100741"
