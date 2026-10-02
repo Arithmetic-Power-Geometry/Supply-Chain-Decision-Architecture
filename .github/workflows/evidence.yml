@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Run frozen model competition when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_model_competition.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; no architecture winner is claimed."
+          fi
       - name: Compute independent coding reliability when available
         run: |
           if [ -f data/reliability/coder_a_v1.csv ] && [ -f data/reliability/coder_b_v1.csv ]; then
