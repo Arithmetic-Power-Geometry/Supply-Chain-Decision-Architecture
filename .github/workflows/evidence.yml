@@ -111,20 +111,8 @@ jobs:
           PY
       - name: Initialize Stage-2 Batch-01 execution package
         run: python scripts/init_stage2_batch01.py
-      - name: Enrich Stage-2 Batch-01 with bibliographic metadata
-        run: python scripts/enrich_stage2_batch01.py
-      - name: Verify enriched Batch-01 metadata
-        run: |
-          python - <<'PY'
-          import csv
-          p="artifacts/screening/stage2_execution/B01_source_verification_enriched.csv"
-          with open(p,newline="",encoding="utf-8") as f: rows=list(csv.DictReader(f))
-          assert len(rows)==25 and len({r["record_id"] for r in rows})==25
-          assert all(r["title"] for r in rows)
-          assert all(not r["eligibility_decision"] for r in rows)
-          assert all(r["source_status"]=="pending" for r in rows)
-          print("Enriched B01 passed: metadata present; eligibility remains evidence-empty.")
-          PY
+      # B01-B08 are already source-resolved and CI-certified against the frozen cohort.
+      # Do not re-enrich completed batches from live discovery files.
       - name: Finalize source-supported Stage-2 Batch-01
         run: python scripts/finalize_stage2_b01.py
       - name: Validate finalized Stage-2 Batch-01
