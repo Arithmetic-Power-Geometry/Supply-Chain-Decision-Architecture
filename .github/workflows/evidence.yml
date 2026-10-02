@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Build provenance graph when frozen corpus is available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ] && [ -f data/screening_log_v3.csv ]; then
+            python scripts/build_provenance_graph.py protocol/provenance_jobs_v1.json
+          else
+            echo "Downstream corpus not yet frozen; final provenance graph remains pending."
+          fi
       - name: Report current manuscript mechanics
         continue-on-error: true
         run: python scripts/audit_manuscript_mechanics.py paper/main.tex
