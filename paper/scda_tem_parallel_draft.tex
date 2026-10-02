@@ -1,0 +1,79 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{hyperref}
+\title{The Decision Architecture of Supply Chain Management: Separating Decisions, Solutions, Evidence, and Context}
+\author{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Supply-chain-management research spans strategic, tactical, and operational decisions; planning and execution processes; material, information, and financial flows; diverse objectives; theories; analytical and computational methods; enabling technologies; empirical evidence; and application contexts. These elements are frequently reported together even though they answer different analytical questions. This paper develops and tests a decision-architecture representation that separates a Decision Kernel from Solution, Evidence, and Context layers. The study is designed as an open-evidence systematic review with reproducible screening, claim-level coding, independent reliability assessment, nested architecture competition, comparator-framework analysis, holdout evaluation, and robustness testing. The architecture is not assumed to require every proposed layer: progressively richer representations are compared under explicit parsimony and falsification criteria, allowing the evidence to determine the smallest adequate representation. Empirical results are inserted only after the review corpus, coding, reliability, comparator mappings, and downstream analyses are frozen.
+\end{abstract}
+
+\begin{IEEEkeywords}
+supply chain management, decision architecture, systematic review, decision support, resilience, digital supply chain, evidence synthesis
+\end{IEEEkeywords}
+
+\section{Introduction}
+Supply chain management (SCM) has accumulated a large and heterogeneous body of research spanning decisions about sourcing, production, inventory, transportation, coordination, resilience, sustainability, and technology-enabled operations. The resulting literature contains several distinct descriptive objects: the decision being made, the process and flow to which it belongs, the objective pursued, the theory or method used to address it, the technology that enables implementation, the maturity of the supporting evidence, and the context in which the result is observed.
+
+Treating these objects as interchangeable can obscure whether two studies address the same decision through different solutions, apply similar technologies to different decisions, or provide different levels of evidence for superficially similar claims. The central problem examined here is therefore representational: what information is necessary to describe SCM decision research without conflating the decision itself with the means used to study or implement it?
+
+We formulate a layered Supply Chain Decision Architecture (SCDA). Its Decision Kernel is \(K=(L,P,F,O)\), where \(L\) denotes decision level, \(P\) process, \(F\) flow, and \(O\) objective. A Solution Layer \(S=(T,M,G)\) separates theory, method, and enabling technology. Evidence maturity is represented by \(V\), and industry or application context by \(I\). The complete candidate representation is
+\[
+R=(K,S,V,I)=((L,P,F,O),(T,M,G),V,I).
+\]
+The full representation is a hypothesis rather than a predetermined endpoint. Four nested candidates---K4, KS7, KSV8, and SCDA9---are evaluated to determine whether additional dimensions provide reproducible, non-redundant information after accounting for model complexity.
+
+\subsection{Research Questions}
+\textbf{RQ1:} How has SCM decision research evolved across disciplines and historical eras?
+
+\textbf{RQ2:} Which dimensions are required to represent focal SCM decisions without conflating decisions, solutions, evidence, and context?
+
+\textbf{RQ3:} Do the Solution, Evidence, and Context layers add non-redundant representational information beyond the Decision Kernel?
+
+\textbf{RQ4:} Can the proposed dimensions be coded reproducibly and remain stable under holdout and robustness analyses?
+
+\textbf{RQ5:} What evidence gaps and decision-relevant distinctions become visible when the layers are separated?
+
+\section{Conceptual Architecture}
+The architecture distinguishes what is decided from how the decision is investigated or implemented. The Decision Kernel contains the decision level, process, flow, and objective. The Solution Layer records explicit theory, method, and enabling technology without treating technological sophistication as evidence maturity. The Evidence Layer records the maturity of support for a claim, whereas the Context Layer records the setting in which the claim is established.
+
+The nested representations are K4 \(=(L,P,F,O)\), KS7 \(=K4+(T,M,G)\), KSV8 \(=KS7+V\), and SCDA9 \(=KSV8+I\). Because additional dimensions can mechanically increase distinguishability, architecture selection is not based on descriptive richness alone. Coverage, collision behaviour, information content, coding reliability, holdout performance, ablation behaviour, and complexity-adjusted adequacy are evaluated jointly.
+
+\section{Review and Validation Method}
+\subsection{Open-Evidence Retrieval}
+The review uses a frozen open-evidence protocol. OpenAlex provides discovery, Crossref supports bibliographic verification, and DOI/publisher or legitimate scholarly repository records provide source verification. Open-index retrieval is not represented as a Scopus or Web of Science search. Search families, dates, query provenance, deduplication, and stable record identifiers are retained as reproducibility artifacts.
+
+\subsection{Two-Stage Screening}
+Title/abstract screening precedes source-supported full-text eligibility assessment. Records are assigned stable identifiers, and exclusions use frozen reason codes. Primary studies and explicit review or synthesis papers are routed separately. Failure of automated full-text acquisition does not by itself establish ineligibility.
+
+\subsection{Claim-Level Coding}
+Eligible primary evidence is decomposed into auditable claims rather than treating an entire publication as a single observation. Each claim is linked to its publication and source location and coded against the candidate SCDA dimensions. Theory is coded only when explicit; technology is not used as a proxy for evidence maturity; and context is not treated as decision identity.
+
+\subsection{Reliability}
+A prespecified subset is independently coded by a second coder who is blinded to Reviewer-A labels. Raw agreement and Cohen's kappa are reported for applicable nominal fields, with additional reliability statistics used only where their assumptions and coding structure are appropriate. Reliability problems trigger codebook revision, adjudication, sensitivity analysis, field demotion, or removal rather than silent reconciliation.
+
+\subsection{Architecture Competition and Falsification}
+The four nested representations are compared using coverage, collision rate, distinct signatures, information content, and a prespecified complexity penalty. Genuine SCM comparator frameworks are defined from their scholarly sources before headline SCDA outcomes are inspected. Temporal and disciplinary holdouts test generalization. Evidence- and context-layer matched-case analyses test whether \(V\) and \(I\) provide incremental information after other dimensions are held fixed. Bootstrap and missing-data sensitivity analyses assess selection stability.
+
+The falsification rule is explicit: SCDA9 is not the default winner. If K4, KS7, KSV8, or a representation with Evidence or Context retained as orthogonal annotations is better supported, the final architecture is simplified accordingly.
+
+\section{Results}
+\textit{Reserved for frozen Stage-2 corpus, claim-level coding, independent reliability, comparator, nested-model, holdout, matched-case, robustness, and managerial-usefulness results. No provisional result is promoted here.}
+
+\section{Discussion}
+\textit{Written after headline empirical outputs and provenance are frozen.}
+
+\section{Managerial Relevance}
+\textit{Written from the frozen decision-usefulness analysis and final architecture.}
+
+\section{Limitations}
+The final limitations section will distinguish retrieval coverage, source accessibility, coding uncertainty, representational assumptions, and generalization boundaries using the completed audit trail.
+
+\section{Conclusion}
+\textit{Written only after the evidence determines the retained architecture.}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
