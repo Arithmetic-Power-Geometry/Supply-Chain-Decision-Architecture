@@ -210,6 +210,26 @@ jobs:
           assert all(r["adjudication_required"]=="no" for r in rows)
           print("B04 Reviewer-A evidence closure passed: 17 include, 8 exclude.")
           PY
+      - name: Initialize Stage-2 B05-B08 parallel evidence wave
+        run: |
+          for B in B05 B06 B07 B08; do
+            python scripts/init_stage2_batch.py --batch-id "$B"
+          done
+          python - <<'PY'
+          import csv, pathlib
+          total=0
+          for b in ("B05","B06","B07","B08"):
+              p=pathlib.Path(f"artifacts/screening/stage2_execution/{b}_source_verification_enriched.csv")
+              with p.open(newline="",encoding="utf-8") as f:
+                  rows=list(csv.DictReader(f))
+              assert len(rows)==25 and len({r["record_id"] for r in rows})==25
+              assert all(not r["eligibility_decision"] for r in rows)
+              assert all(r["source_status"]=="pending" for r in rows)
+              assert all(r["adjudication_required"]=="yes" for r in rows)
+              total += len(rows)
+          assert total==100
+          print("B05-B08 evidence wave initialized: 100 records; no synthetic decisions.")
+          PY
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
