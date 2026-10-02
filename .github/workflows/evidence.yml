@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Run robustness battery when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_robustness.py data/large_corpus_claims_v1.csv --bootstrap 500
+          else
+            echo "Large-corpus claims not yet frozen; robustness conclusions remain pending."
+          fi
       - name: Test incremental context-layer value when large-corpus claims are available
         run: |
           if [ -f data/large_corpus_claims_v1.csv ]; then
