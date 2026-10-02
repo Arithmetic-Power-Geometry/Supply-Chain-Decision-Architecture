@@ -1,0 +1,5 @@
+claim_id,study_id,dimension,coder_a_value,coder_b_value,final_value,rationale,adjudicator,source_basis,status
+C0018,SCDA-15CC31629ED59E52,method,Artificial Intelligence,,,Method classification requires source-level review against frozen method categories; blockchain/IoT framework does not automatically imply an AI method.,,Open publisher full text,pending_pre_reliability
+C0018,SCDA-15CC31629ED59E52,evidence_maturity,Synthetic,,,Evaluation basis must be re-inspected; technology sophistication cannot determine evidence maturity.,,Open publisher full text,pending_pre_reliability
+C0025,SCDA-BA7CDCDBF41E9BCA,study_role,primary,,,Source is substantially review/conceptual and retained-primary routing requires role adjudication before corpus freeze.,,Open publisher full text,pending_pre_reliability
+C0026,SCDA-D08B6ECDCF712676,study_role,primary,,,Source is literature-synthesis oriented and retained-primary routing requires role adjudication before corpus freeze.,,Open publisher full text,pending_pre_reliability
