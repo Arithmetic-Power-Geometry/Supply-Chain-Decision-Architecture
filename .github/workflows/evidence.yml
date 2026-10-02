@@ -105,6 +105,19 @@ jobs:
           assert all(r["full_text_status"]=="pending" for r in rows)
           print("Stage-2 acquisition batching passed: 27 batches, 659 unique records.")
           PY
+      - name: Prepare blinded Stage-2 reliability sample shell
+        run: python scripts/prepare_stage2_reliability_sample.py
+      - name: Verify reliability sample shell
+        run: |
+          python - <<'PY'
+          import csv
+          with open("artifacts/reliability/stage2_coder_b_sample.csv",newline="",encoding="utf-8") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==132
+          assert len({r["record_id"] for r in rows})==132
+          assert all(r["coder_b_status"]=="pending" and not r["coder_b_decision"] for r in rows)
+          print("Reliability sample shell passed: 132 unique records; no generated coder-B judgments.")
+          PY
       - name: Audit Stage-2 acquisition and eligibility status
         run: python scripts/audit_stage2_status.py
       - name: Generate G20 readiness report
