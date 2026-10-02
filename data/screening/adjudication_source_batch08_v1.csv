@@ -1,0 +1,8 @@
+record_id,decision,exclusion_reason,study_type,source,status
+SCDA-B844B11B8AAC2020,exclude,E05,other,10.59160/ijscm,resolved
+SCDA-4482E8F10B518812,include,,primary,10.1016/j.cie.2023.109055,resolved
+SCDA-FA1F720B8A9F8E59,exclude,E02,other,10.1007/s43674-023-00058-y,resolved
+SCDA-A491768B033B8148,exclude,E02,other,10.1016/j.comnet.2024.110350,resolved
+SCDA-70CA87C411AEBD25,include,,primary,10.1016/j.techfore.2023.123146,resolved
+SCDA-F0C4D9B455A62C33,exclude,E02,other,10.1016/j.autcon.2024.105369,resolved
+SCDA-CE4A6DD0233B9B96,include,,primary,10.1016/j.tre.2024.103613,resolved
