@@ -88,6 +88,8 @@ jobs:
           assert all(r["adjudication_required"]=="yes" for r in rows)
           print("Stage-2 initialization checks passed: 659 unique pending records.")
           PY
+      - name: Audit Stage-2 acquisition and eligibility status
+        run: python scripts/audit_stage2_status.py
       - name: Generate G20 readiness report
         if: always()
         run: python scripts/run_g20_readiness.py
