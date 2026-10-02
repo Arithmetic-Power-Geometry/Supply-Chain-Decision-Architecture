@@ -51,6 +51,9 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Generate G20 readiness report
+        if: always()
+        run: python scripts/run_g20_readiness.py
       - name: Validate paper claim map when populated
         run: |
           if [ -f data/paper_claim_map_v1.csv ]; then
