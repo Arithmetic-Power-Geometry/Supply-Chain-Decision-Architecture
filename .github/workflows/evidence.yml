@@ -121,6 +121,8 @@ jobs:
           assert all(r["source_status"]=="pending" for r in rows)
           print("Enriched B01 passed: metadata present; eligibility remains evidence-empty.")
           PY
+      - name: Validate Stage-2 Batch-01 evidence ledger
+        run: python scripts/validate_stage2_batch_evidence.py
       - name: Verify Batch-01 starts evidence-empty
         run: |
           python - <<'PY'
