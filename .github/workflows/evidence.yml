@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Run generalization tests when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_generalization.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; holdout remains unopened."
+          fi
       - name: Run frozen model competition when large-corpus claims are available
         run: |
           if [ -f data/large_corpus_claims_v1.csv ]; then
