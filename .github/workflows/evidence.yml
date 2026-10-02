@@ -51,6 +51,15 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Audit manuscript bibliography integrity
+        run: python scripts/audit_references.py paper/main.tex paper/references.bib
+      - name: Validate claim provenance when ledger is available
+        run: |
+          if [ -f data/claim_provenance_v1.csv ]; then
+            python scripts/validate_claim_provenance.py data/claim_provenance_v1.csv
+          else
+            echo "Claim provenance ledger not yet populated; semantic support remains pending."
+          fi
       - name: Evaluate managerial decision usefulness when large-corpus claims are available
         run: |
           if [ -f data/large_corpus_claims_v1.csv ]; then
