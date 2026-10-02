@@ -1,0 +1,21 @@
+{
+  "status": "REVIEWER_A_CORPUS_IN_PROGRESS_NOT_FROZEN",
+  "production_claims": 57,
+  "claim_file_blob_sha": "6560a7183ff9a0c1cddb255d555b89967119cf88",
+  "architecture_analysis_unlocked": false,
+  "coder_b": "pending external independent coding",
+  "freeze_blockers": [
+    "remaining retained-primary source sufficiency/acquisition review",
+    "pending pre-reliability adjudications",
+    "final claim-corpus SHA-256 freeze",
+    "final blinded >=20% claim-level Coder-B sample",
+    "genuine Coder-B return and pre-adjudication reliability"
+  ],
+  "safeguards": [
+    "no title-only claims",
+    "abstract-supported claims explicitly identified",
+    "no inaccessible full text inferred",
+    "no Coder-B labels simulated",
+    "no headline architecture result before gate unlock"
+  ]
+}
