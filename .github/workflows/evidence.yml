@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Evaluate managerial decision usefulness when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_managerial_value.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; managerial-usefulness conclusions remain pending."
+          fi
       - name: Run robustness battery when large-corpus claims are available
         run: |
           if [ -f data/large_corpus_claims_v1.csv ]; then
