@@ -1,0 +1,6 @@
+record_id,prior_decision,adjudicated_decision,exclusion_reason,study_type,evidence_basis,adjudication_status
+SCDA-79FC5C6A1F178DD1,uncertain,include,,primary,retrieved abstract describes exploratory survey and focus groups with supply-chain managers,resolved
+SCDA-472557B1D0589C09,uncertain,exclude,E02,other,retrieved abstract concerns general resilience of infrastructure communities and regions without substantive SCM focus,resolved
+SCDA-5B62FBBA8F8DED5B,uncertain,exclude,E03,other,retrieved abstract concerns Amazon deforestation policy with supply-chain interventions but not a substantive SCM decision phenomenon,resolved
+SCDA-144B243ABB4F9071,uncertain,exclude,E03,other,retrieved abstract estimates methane leakage in an oil-and-gas supply chain rather than studying SCM decisions,resolved
+SCDA-75E22ED60BF1CB9F,exclude,exclude,E04,other,retrieved metadata and abstract support practitioner-oriented article classification; retain E04 pending bibliographic source confirmation,resolved
