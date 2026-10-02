@@ -1,0 +1,10 @@
+metric,value
+candidate_records,705
+screening_rows,705
+unique_record_ids,705
+include,549
+exclude,25
+uncertain,131
+primary_includes,375
+review_includes,174
+adjudication_required,152
