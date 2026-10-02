@@ -1,0 +1,21 @@
+record_id,decision,exclusion_reason,study_type,evidence_basis,source_url,status
+SCDA-6DE86D85A995383D,include,,review,publisher identifies invited review of coordinated planning literature,https://www.sciencedirect.com/science/article/pii/0377221796000987,resolved
+SCDA-0FBB26284C6EE6A4,include,,primary,HBR article develops product-uncertainty/supply-chain framework,https://hbr.org/1997/03/what-is-the-right-supply-chain-for-your-product,resolved
+SCDA-51C2B689C39FDF07,include,,review,publisher abstract states focused review of multi-stage supply-chain modeling and research agenda,https://www.sciencedirect.com/science/article/pii/S0925527398000796,resolved
+SCDA-ED89568A4B1A8039,include,,primary,publisher abstract presents lean-agile integration strategy supported by PC supply-chain case,https://www.sciencedirect.com/science/article/pii/S0925527398002230,resolved
+SCDA-AAE0811B51F5BDCB,exclude,E04,other,publisher identifies record as edited book rather than article-level study,https://link.springer.com/book/10.1007/978-1-4615-4949-9,resolved
+SCDA-2F0479AFA9CA560C,include,,primary,publisher abstract presents SCM framework illustrated by company case studies,https://www.sciencedirect.com/science/article/pii/S0019850199001133,resolved
+SCDA-DDE5BA5C77A0A123,include,,primary,publisher abstract develops agile/responsive supply-chain argument,https://www.sciencedirect.com/science/article/pii/S0019850199001108,resolved
+SCDA-39E11CF2CCE0E648,include,,primary,publisher abstract analyzes Internet applications across major SCM components,https://www.sciencedirect.com/science/article/abs/pii/S001985019900111X,resolved
+SCDA-8B677F8202FBB317,include,,primary,publisher abstract conceptually integrates strategic and operational partnering in retail supply chains,https://www.sciencedirect.com/science/article/pii/S0022435900000403,resolved
+SCDA-2F4A87EA432BCE53,include,,primary,publisher book TOC verifies substantive Agent-Oriented Supply-Chain Management chapter,https://link.springer.com/book/10.1007/978-1-4615-1599-9,resolved
+SCDA-2E8910515FE4627A,include,,primary,university metadata describes development of SCM performance measures and metrics,https://pure.psu.edu/en/publications/performance-measures-and-metrics-in-a-supply-chain-environment/,resolved
+SCDA-BA73962C0784A60D,include,,primary,publisher abstract conceptualizes SCM via channel governance and logistics-marketing integration,https://www.sciencedirect.com/science/article/pii/S0019850100001425,resolved
+SCDA-75F08FDDE2F0B5B8,include,,primary,publisher/repository abstract develops framework matching supply and demand uncertainty to supply-chain strategy,https://cmr.berkeley.edu/2002/05/44-3-aligning-supply-chain-strategies-with-product-uncertainties/,resolved
+SCDA-D318B7D5221DFAA5,include,,primary,publisher abstract reports model tested with purchasing-manager data,https://www.sciencedirect.com/science/article/pii/S0019850101001699,resolved
+SCDA-5E6599C35F3378F3,include,,review,publisher abstract explicitly reports critical literature review and IT-in-SCM framework,https://www.sciencedirect.com/science/article/abs/pii/S0377221703005186,resolved
+SCDA-126A7085F6072040,include,,review,source abstract identifies chapter as review of supply-chain coordination contracts and models,https://www.researchgate.net/publication/239726910_Supply_Chain_Coordination_with_Contracts,resolved
+SCDA-8891E87927797B9A,include,,primary,publisher abstract proposes stochastic programming model and solution algorithm for SC network design,https://www.sciencedirect.com/science/article/pii/S0377221704002292,resolved
+SCDA-07DA548C62739EE6,include,,primary,publisher abstract proposes multi-objective optimization model for green SCM logistics,https://www.sciencedirect.com/science/article/pii/S136655450400047X,resolved
+SCDA-1C46D7EDBEAB9486,include,,primary,publisher abstract reports empirical study of JIT TQM SCM linkages and performance,https://www.sciencedirect.com/science/article/pii/S030504830400060X,resolved
+SCDA-259F49DC9200E32B,include,,review,publisher identifies invited review and conceptual frameworks for SCM and advanced planning,https://www.sciencedirect.com/science/article/pii/S0377221704001183,resolved
