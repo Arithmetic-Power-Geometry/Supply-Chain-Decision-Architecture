@@ -13,11 +13,11 @@ def main():
  a=p.parse_args()
  bid=a.batch_id.upper()
  if not re.fullmatch(r"B(?:0[1-9]|1[0-9]|2[0-7])",bid): raise SystemExit("FAIL batch-id must be B01..B27")
- batch_path=Path(a.batch_dir)/f"{bid}.csv"
+ batch_path=Path(a.batch_dir)/f"{bid}.csv"\n if not batch_path.exists(): raise SystemExit(f"FAIL acquisition batch missing: {batch_path.resolve()}")
  with open(batch_path,newline="",encoding="utf-8") as f: batch=list(csv.DictReader(f))
  expected=9 if bid=="B27" else 25
  if len(batch)!=expected or len({x["record_id"] for x in batch})!=expected: raise SystemExit(f"FAIL {bid} expected {expected} unique records")
- with open(a.corpus,newline="",encoding="utf-8") as f: corpus={x["record_id"]:x for x in csv.DictReader(f)}
+ corpus_path=Path(a.corpus)\n if not corpus_path.exists(): raise SystemExit(f"FAIL stable corpus missing: {corpus_path.resolve()}")\n with open(corpus_path,newline="",encoding="utf-8") as f: corpus={x["record_id"]:x for x in csv.DictReader(f)}
  missing=[x["record_id"] for x in batch if x["record_id"] not in corpus]
  if missing: raise SystemExit(f"FAIL metadata missing for {missing}")
  out=Path(a.output_dir)/f"{bid}_source_verification_enriched.csv";out.parent.mkdir(parents=True,exist_ok=True)
