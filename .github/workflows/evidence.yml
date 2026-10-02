@@ -23,10 +23,16 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -p 'test*.py' -v
 
-      - name: Run benchmark
+      - name: Run synthetic benchmark
         run: python benchmarks/run_benchmark.py
 
-      - name: Build artifact manifest\n        run: python scripts/build_manifest.py\n\n      - name: Upload evidence artifact
+      - name: Run claim-level calibration
+        run: python scripts/run_primary_pilot.py
+
+      - name: Build artifact manifest
+        run: python scripts/build_manifest.py
+
+      - name: Upload evidence artifact
         uses: actions/upload-artifact@v4
         with:
           name: scda-evidence
