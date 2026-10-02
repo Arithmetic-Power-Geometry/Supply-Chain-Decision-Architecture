@@ -72,6 +72,23 @@ jobs:
           assert len({r["record_id"] for r in rows})==659
           print("Reviewer-A Stage-1 freeze checks passed.")
           PY
+      - name: Restore frozen Stage-1 metadata snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/frozen /tmp/scda-freeze
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture/actions/artifacts/11215299923/zip" -o /tmp/scda-freeze/run199.zip
+          echo "bbcb768fce87845525e13f3f652271c81568a556f73c1181766eb441b526ea11  /tmp/scda-freeze/run199.zip" | sha256sum -c -
+          unzip -p /tmp/scda-freeze/run199.zip artifacts/corpus/openalex_candidate_corpus_stable.csv > data/frozen/stage1_candidate_metadata_v1.csv
+          python - <<'PY'
+          import csv
+          p="data/frozen/stage1_candidate_metadata_v1.csv"
+          with open(p,newline="",encoding="utf-8") as f: rows=list(csv.DictReader(f))
+          ids={r["record_id"] for r in rows}
+          assert len(rows)==705 and len(ids)==705
+          assert "SCDA-28ADCDD54D899FD6" in ids
+          print("Frozen Stage-1 metadata restored and verified: 705 unique records.")
+          PY
       - name: Initialize Stage-2 full-text ledger
         run: python scripts/init_stage2_ledger.py
       - name: Verify Stage-2 ledger initialization
