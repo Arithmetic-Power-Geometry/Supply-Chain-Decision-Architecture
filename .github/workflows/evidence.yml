@@ -130,6 +130,24 @@ jobs:
             artifacts/screening/stage2_execution/B12_source_verification_enriched.csv
           if-no-files-found: error
 
+      - name: Initialize Stage-2 B13-B16 parallel evidence wave
+        run: |
+          for B in B13 B14 B15 B16; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --batch-plan artifacts/screening/stage2_batches_v1.csv --metadata data/frozen/stage1_candidate_metadata_v1.csv --output-dir artifacts/screening/stage2_execution
+          done
+          python scripts/verify_stage2_wave.py B13 B14 B15 B16 --execution-dir artifacts/screening/stage2_execution
+
+      - name: Upload B13-B16 evidence wave immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-b13-b16-wave
+          path: |
+            artifacts/screening/stage2_execution/B13_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B14_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B15_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B16_source_verification_enriched.csv
+          if-no-files-found: error
+
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
