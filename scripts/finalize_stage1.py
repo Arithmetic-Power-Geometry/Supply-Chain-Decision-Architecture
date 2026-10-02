@@ -11,13 +11,14 @@ def rows(path):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--base",required=True)
+    p.add_argument("--base",default="")
+    p.add_argument("--base-glob",default="data/screening/stage1_base_decisions_part*_v1.csv")
     p.add_argument("--batches",default="data/screening/adjudication_source_batch*_v1.csv")
     p.add_argument("--ledger",default="artifacts/screening/stage1_final_ledger.csv")
     p.add_argument("--stage2",default="artifacts/screening/stage2_queue.csv")
     p.add_argument("--audit",default="artifacts/screening/stage1_final_audit.json")
     a=p.parse_args()
-    base=rows(a.base)
+    base=rows(a.base) if a.base else [x for fn in sorted(glob.glob(a.base_glob)) for x in rows(fn)]
     if len(base)!=705: raise SystemExit(f"FAIL base rows={len(base)} expected=705")
     ids=[x["record_id"] for x in base]
     if len(set(ids))!=705: raise SystemExit("FAIL duplicate base record_id")
