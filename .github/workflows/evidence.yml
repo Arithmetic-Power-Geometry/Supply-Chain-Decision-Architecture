@@ -296,6 +296,13 @@ jobs:
           print("B08 Reviewer-A evidence closure passed: 21 include, 4 exclude.")
           PY
 
+      - name: Initialize Stage-2 B09-B12 parallel evidence wave
+        run: |
+          for B in B09 B10 B11 B12; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+          done
+          python scripts/verify_stage2_wave.py --batch-ids B09 B10 B11 B12 --execution-dir artifacts/screening/stage2_execution --expected-size 25
+
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
