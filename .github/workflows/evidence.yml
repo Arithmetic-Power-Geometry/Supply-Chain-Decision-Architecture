@@ -88,6 +88,23 @@ jobs:
           assert all(r["adjudication_required"]=="yes" for r in rows)
           print("Stage-2 initialization checks passed: 659 unique pending records.")
           PY
+      - name: Build deterministic Stage-2 acquisition batches
+        run: python scripts/build_stage2_acquisition_batches.py
+      - name: Verify Stage-2 acquisition batches
+        run: |
+          python - <<'PY'
+          import csv, glob
+          files=sorted(glob.glob("artifacts/screening/stage2_acquisition_batches/B*.csv"))
+          rows=[]
+          for p in files:
+              with open(p,newline="",encoding="utf-8") as f:
+                  rows.extend(csv.DictReader(f))
+          assert len(files)==27
+          assert len(rows)==659
+          assert len({r["record_id"] for r in rows})==659
+          assert all(r["full_text_status"]=="pending" for r in rows)
+          print("Stage-2 acquisition batching passed: 27 batches, 659 unique records.")
+          PY
       - name: Audit Stage-2 acquisition and eligibility status
         run: python scripts/audit_stage2_status.py
       - name: Generate G20 readiness report
