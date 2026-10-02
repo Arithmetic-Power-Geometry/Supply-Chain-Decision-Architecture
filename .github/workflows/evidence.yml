@@ -31,6 +31,8 @@ jobs:
           python scripts/retrieve_openalex.py --search-id O004 --query "supply chain optimization simulation analytics forecasting machine learning artificial intelligence digital twin blockchain internet of things autonomous" --max-pages 2
       - name: Build deduplicated candidate corpus
         run: python scripts/build_openalex_candidate_corpus.py
+      - name: Report candidate-corpus quality
+        run: python scripts/report_candidate_quality.py
       - name: Validate screening when screening log is present
         run: |
           if [ -f data/screening_log_v2.csv ]; then
