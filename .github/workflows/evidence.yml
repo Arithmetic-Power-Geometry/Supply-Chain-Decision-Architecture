@@ -33,6 +33,8 @@ jobs:
         run: python scripts/validate_retrieval.py
       - name: Build deduplicated candidate corpus
         run: python scripts/build_openalex_candidate_corpus.py
+      - name: Assign deterministic stable candidate IDs
+        run: python scripts/assign_stable_record_ids.py artifacts/corpus/openalex_candidate_corpus.csv
       - name: Independently verify DOI metadata with Crossref
         run: python scripts/verify_crossref.py artifacts/corpus/openalex_candidate_corpus.csv
       - name: Report candidate-corpus quality
