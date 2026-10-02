@@ -29,6 +29,8 @@ jobs:
           python scripts/retrieve_openalex.py --search-id O002 --query "supply chain" --max-pages 2
           python scripts/retrieve_openalex.py --search-id O003 --query "supply chain decision planning sourcing procurement production inventory logistics coordination disruption risk resilience sustainability" --max-pages 2
           python scripts/retrieve_openalex.py --search-id O004 --query "supply chain optimization simulation analytics forecasting machine learning artificial intelligence digital twin blockchain internet of things autonomous" --max-pages 2
+      - name: Validate retrieval provenance
+        run: python scripts/validate_retrieval.py
       - name: Build deduplicated candidate corpus
         run: python scripts/build_openalex_candidate_corpus.py
       - name: Report candidate-corpus quality
