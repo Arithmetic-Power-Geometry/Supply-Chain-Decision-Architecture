@@ -1,0 +1,38 @@
+{
+  "version": "v1",
+  "status": "claim_corpus_build_in_progress",
+  "frozen_counts": {
+    "candidate_records": 705,
+    "stage2_screened": 659,
+    "included": 518,
+    "excluded": 141,
+    "retained_primary": 342,
+    "retained_review_framework": 176
+  },
+  "frozen_corpus_sha256": "6bdcc48b9c38b37709c01474237e0650b247891449b72d4c5b2094e26845b3a9",
+  "authoritative_files": {
+    "stage2": "data/frozen/stage2_final_manifest_v1.csv",
+    "included": "data/frozen/included_studies_v1.csv",
+    "excluded": "data/frozen/excluded_studies_v1.csv",
+    "primary": "data/frozen/primary_studies_v1.csv",
+    "reviews": "data/frozen/review_framework_studies_v1.csv",
+    "acquisition": "data/frozen/primary_source_acquisition_status_v1.csv",
+    "claims": "data/production_claims_final_v1.csv"
+  },
+  "source_acquisition_initial": {
+    "abstract_available_requires_claim_review": 224,
+    "full_text_available": 28,
+    "metadata_only": 90
+  },
+  "external_blockers": [
+    "Genuine independent Coder-B decisions are not yet supplied."
+  ],
+  "safeguards": [
+    "No title-only claims.",
+    "No fabricated full text.",
+    "No fabricated Coder-B coding.",
+    "No architecture winner assumed.",
+    "Final paper waits for empirical result freeze."
+  ],
+  "note": "The authoritative 705-record master CSV remains preserved in the frozen GitHub Actions artifact and still requires durable promotion to the branch."
+}
