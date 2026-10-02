@@ -153,9 +153,9 @@ jobs:
           PY
       - name: Initialize next Stage-2 evidence batches
         run: |
-          python scripts/init_stage2_batch.py --batch-id B02
-          python scripts/init_stage2_batch.py --batch-id B03
-          python scripts/init_stage2_batch.py --batch-id B04
+          python scripts/init_stage2_batch.py --batch-id B02 --batch-dir artifacts/screening/stage2_acquisition_batches
+          python scripts/init_stage2_batch.py --batch-id B03 --batch-dir artifacts/screening/stage2_acquisition_batches
+          python scripts/init_stage2_batch.py --batch-id B04 --batch-dir artifacts/screening/stage2_acquisition_batches
       - name: Verify next Stage-2 batches remain evidence-empty
         run: |
           python - <<'PY'
