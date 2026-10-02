@@ -1,0 +1,7 @@
+check,result,detail
+row_count,PASS,200
+unique_record_id,PASS,200
+terminal_stage1_decision,PASS,"{'include': 131, 'uncertain': 48, 'exclude': 21}"
+exclude_reason_present,PASS,"{'E04': 20, 'E02': 1}"
+uncertain_to_adjudication,PASS,48 uncertain
+review_primary_normalization,PASS,18 review labels normalized to primary; 7 flagged labels retained as explicit review/synthesis.
