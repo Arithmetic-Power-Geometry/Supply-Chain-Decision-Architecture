@@ -37,6 +37,13 @@ jobs:
         run: python scripts/verify_crossref.py artifacts/corpus/openalex_candidate_corpus.csv
       - name: Report candidate-corpus quality
         run: python scripts/report_candidate_quality.py
+      - name: Build screening flow when v3 ledger is present
+        run: |
+          if [ -f data/screening_log_v3.csv ]; then
+            python scripts/build_screening_flow.py
+          else
+            echo "Two-stage screening ledger not yet populated."
+          fi
       - name: Validate screening when screening log is present
         run: |
           if [ -f data/screening_log_v2.csv ]; then
