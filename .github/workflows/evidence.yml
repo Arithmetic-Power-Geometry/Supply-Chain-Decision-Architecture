@@ -213,7 +213,7 @@ jobs:
       - name: Initialize Stage-2 B05-B08 parallel evidence wave
         run: |
           for B in B05 B06 B07 B08; do
-            python scripts/init_stage2_batch.py --batch-id "$B"
+            python scripts/init_stage2_batch.py --batch-id "$B" --batch-dir artifacts/screening/stage2_acquisition_batches
           done
           python - <<'PY'
           import csv, pathlib
