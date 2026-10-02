@@ -8,7 +8,7 @@ def main():
  p=argparse.ArgumentParser()
  p.add_argument("--batch-id",required=True,help="B01..B27")
  p.add_argument("--ledger",default="artifacts/screening/stage2_screening_ledger.csv")
- p.add_argument("--corpus",default="artifacts/corpus/openalex_candidate_corpus_stable.csv")
+ p.add_argument("--corpus",default="data/frozen/stage1_candidate_metadata_v1.csv")
  p.add_argument("--output-dir",default="artifacts/screening/stage2_execution")
  p.add_argument("--batch-dir",default="",help="Deprecated; batch membership is reconstructed from the frozen Stage-2 ledger.")
  a=p.parse_args()
