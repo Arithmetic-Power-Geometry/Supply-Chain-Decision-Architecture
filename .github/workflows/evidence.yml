@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Test incremental context-layer value when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_context_layer_test.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; context-layer value remains untested."
+          fi
       - name: Test incremental evidence-layer value when large-corpus claims are available
         run: |
           if [ -f data/large_corpus_claims_v1.csv ]; then
