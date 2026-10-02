@@ -115,7 +115,7 @@ jobs:
       - name: Initialize Stage-2 B09-B12 parallel evidence wave
         run: |
           for B in B09 B10 B11 B12; do
-            python scripts/init_stage2_batch.py --batch-id "$B" --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus data/frozen/stage1_candidate_metadata_v1.csv
           done
           python scripts/verify_stage2_wave.py --batch-ids B09 B10 B11 B12 --execution-dir artifacts/screening/stage2_execution --expected-size 25
 
