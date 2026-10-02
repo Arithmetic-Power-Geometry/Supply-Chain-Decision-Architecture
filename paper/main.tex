@@ -1,0 +1,103 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+
+\title{The Decision Architecture of Supply Chain Management: Integrating Management, Operations Research, and Artificial Intelligence}
+
+\author{Mohammad Amir Khusru Akhtar}
+
+\begin{document}
+\maketitle
+
+% Abstract and Managerial Relevance Statement are intentionally finalized only
+% after the systematic corpus and quantitative analyses are frozen.
+
+\section{Introduction}
+Supply chain management (SCM) has developed through several partially overlapping intellectual traditions. Operations research has emphasized allocation, inventory, scheduling, routing, and network design; operations and management research has examined coordination, governance, resilience, and interorganizational relationships; information-systems research has focused on information integration and digital infrastructures; and computer science increasingly contributes predictive models, optimization algorithms, digital twins, and artificial intelligence. This breadth has expanded the field's analytical capacity, but it has also made cumulative interpretation difficult. Studies addressing closely related managerial decisions may be organized under different functional, methodological, technological, or disciplinary labels, whereas studies grouped under the same technological label may provide markedly different forms of evidence.
+
+Existing reviews have generated valuable taxonomies around supply-chain functions, strategic--tactical--operational decision levels, optimization methods, sustainability, resilience, analytics, and individual digital technologies. Decision-oriented classifications are therefore not new. The unresolved problem is whether heterogeneous SCM knowledge can be represented through a common architecture that distinguishes the identity of a decision from the theory or method used to address it, the technology that enables it, the maturity of the evidence supporting the focal claim, and the context in which that evidence is obtained.
+
+This study develops and evaluates a Supply Chain Decision Architecture (SCDA) for that purpose. The architecture is deliberately nested rather than assumed to require its most detailed representation. Its decision kernel describes decision level, process, flow, and objective. A solution layer adds theory, method, and enabling technology; an evidence layer records the maturity of evidence supporting the focal claim; and a context layer records the application setting. The resulting representations range from a four-dimensional decision kernel to a nine-dimensional full representation. Their relative value is treated as an empirical question.
+
+Accordingly, the study asks whether progressively richer representations preserve substantively useful distinctions that simpler decision taxonomies or established multidimensional frameworks obscure, whether those distinctions can be coded reproducibly, and whether they remain informative across historical periods and disciplinary traditions. The contribution is therefore not the introduction of another technology taxonomy or the assertion that more dimensions necessarily produce a better classification. It is a falsifiable framework for testing how much structure is required to represent SCM decision knowledge without conflating decision identity, solution mechanism, technological enablement, evidentiary maturity, and application context.
+
+\section{Intellectual Foundations and Evolution of Supply Chain Decision Research}
+The intellectual development of SCM can be interpreted as a progressive enlargement of the decision system under study. Early operations-oriented research concentrated on localized problems such as inventory, production, transportation, and material coordination. Subsequent work increasingly treated supply chains as interorganizational systems in which information sharing, incentive alignment, sourcing relationships, and network structure affect system-wide performance.
+
+The expansion of global supply networks shifted attention toward disruption, vulnerability, resilience, sustainability, and coordination under uncertainty. Digitalization subsequently introduced new information and execution capabilities through enterprise systems, sensing technologies, cloud platforms, blockchain, advanced analytics, and digital twins. More recent machine-learning and artificial-intelligence research has extended predictive and prescriptive capabilities and has renewed interest in increasingly automated or autonomous decision processes.
+
+These developments do not form a simple sequence in which one paradigm replaces another. Classical optimization remains relevant in digitally intensive supply chains, managerial and behavioral mechanisms remain relevant in algorithmic systems, and sophisticated technology does not itself establish strong empirical evidence. A cumulative representation of the field must therefore preserve distinctions among the decision being addressed, the explanatory or computational mechanism, the enabling infrastructure, and the evidence supporting the resulting claim.
+
+\section{From Supply-Chain Taxonomies to a Decision Architecture}
+\subsection{Boundary Established by Prior Frameworks}
+Prior research already demonstrates that SCM can be organized by decision hierarchy, function, analytical method, application area, technology, and combinations of these dimensions. Consequently, SCDA does not claim novelty from distinguishing strategic, tactical, and operational decisions, from mapping methods to functions, or from combining multiple categorical dimensions. These precedents establish a stronger comparison standard: a new architecture is useful only if its additional distinctions are reliable, non-redundant, and substantively interpretable.
+
+\subsection{Decision Kernel}
+Let the decision kernel be
+\begin{equation}
+K=(L,P,F,O),
+\end{equation}
+where $L$ denotes decision level, $P$ the supply-chain process, $F$ the focal flow, and $O$ the decision objective. The kernel is intended to characterize what decision problem a focal research claim addresses before considering how that problem is studied or technologically enabled.
+
+\subsection{Solution, Evidence, and Context Layers}
+The solution layer is
+\begin{equation}
+S=(T,M,G),
+\end{equation}
+where $T$ denotes an explicitly supported theoretical lens, $M$ the research or solution method, and $G$ the enabling technology. Theory is not inferred when a study does not explicitly establish it, and technology is not treated as a proxy for method.
+
+The evidence layer $V$ records the strongest evidence relevant to the focal coded claim, while the context layer $I$ records the industry or application setting. Method and evidence maturity are intentionally distinct: a sophisticated computational method does not by itself constitute deployment or longitudinal evidence.
+
+The complete representation is therefore
+\begin{equation}
+R=(K,S,V,I).
+\end{equation}
+Four nested alternatives are evaluated:
+\begin{align}
+K4 &= (L,P,F,O),\\
+KS7 &= (K,T,M,G),\\
+KSV8 &= (KS7,V),\\
+SCDA9 &= (KSV8,I).
+\end{align}
+The full representation is not presumed preferable. If a simpler nested model preserves comparable information with greater reliability or parsimony, the architecture is simplified accordingly.
+
+\section{Research Design}
+\subsection{Evidence Retrieval and Corpus Construction}
+The study uses a layered evidence strategy comprising prior reviews and frameworks, historically important primary studies used for calibration, and a systematic primary-study corpus used for quantitative evaluation. Retrieval provenance, duplicate resolution, screening decisions, and source verification are retained as auditable research artifacts. Open scholarly discovery sources are supplemented by DOI metadata verification, publisher records, and backward and forward citation chaining. Subscription databases are not reported as searched unless they are actually executed and logged.
+
+\subsection{Unit of Analysis and Coding}
+The focal research claim is the unit of architecture analysis. A paper may therefore contribute more than one claim record when substantively different claims concern different decisions, methods, technologies, or evidence forms. Claim records remain linked to their source paper so that multiple claims from one study are not treated as independent publications in prevalence analyses.
+
+Coding separates decision level, process, flow, objective, explicit theory, method, technology, evidence maturity, and industry or application context. Uncertain assignments are retained as uncertain rather than resolved through undocumented inference. In particular, absence of an explicit theoretical lens is not repaired by assigning a plausible theory retrospectively.
+
+\subsection{Reliability and Framework Reconstruction}
+The coding procedure is calibrated before the systematic corpus is frozen. A stratified subset is independently coded to quantify agreement for categorical dimensions. Comparator frameworks are reconstructed from their original definitions rather than reduced to artificial one-dimensional baselines. This permits SCDA to be tested against credible prior multidimensional representations.
+
+\subsection{Nested Architecture Evaluation}
+The four nested SCDA representations are evaluated on the same frozen claim corpus. Evaluation considers codability and coverage, signature collisions, information content, complexity-adjusted utility, leave-one-dimension-out ablation, coding reliability, temporal and disciplinary robustness, and interpretable cases in which two claims are merged or separated by alternative representations. No single metric is treated as sufficient evidence of superiority.
+
+Evidence maturity receives a specific matched-case test. Claims addressing comparable decision problems are examined to determine whether differences among conceptual, simulation, benchmark, observational, pilot, deployed, and longitudinal evidence materially change interpretation of what the literature has demonstrated.
+
+\subsection{Falsification and Model Selection}
+The preferred representation is the smallest architecture that retains substantively useful distinctions with acceptable coding reliability and robustness. A dimension is not retained merely because it increases the number of possible signatures. If evidence maturity, theory, flow, technology, or context contributes negligible information, proves unreliable, or fails robustness tests, it is removed from the core representation or retained only as descriptive metadata.
+
+\section{Results}
+% Written only after systematic corpus freeze and reproducible analysis.
+
+\section{Discussion}
+% Written after results are frozen.
+
+\section{Managerial Implications}
+% Written after results are frozen.
+
+\section{Research Agenda}
+% Written from demonstrated gaps, not sparse cells alone.
+
+\section{Conclusion}
+% Written after all claims and results are aligned.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
