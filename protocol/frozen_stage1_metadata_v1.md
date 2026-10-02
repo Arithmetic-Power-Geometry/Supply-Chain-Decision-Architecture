@@ -16,3 +16,6 @@ The workflow restores this pinned snapshot to data/frozen/stage1_candidate_metad
 Scientific rule: a record may leave the eligible corpus only through documented screening/adjudication. It must never disappear because an external discovery index changes between workflow runs.
 
 The pinned workflow artifact currently expires on 2026-12-31. Before branch merge/public release, the snapshot must be moved to a durable repository or archival data asset without changing its bytes or provenance identity.
+
+Frozen stable-corpus file SHA-256: 6bdcc48b9c38b37709c01474237e0650b247891449b72d4c5b2094e26845b3a9.
+Known drift sentinel: SCDA-28ADCDD54D899FD6.
