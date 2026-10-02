@@ -23,22 +23,9 @@ jobs:
         run: python benchmarks/run_benchmark.py
       - name: Run claim-level calibration
         run: python scripts/run_primary_pilot.py
-      - name: Retrieve bounded large-corpus candidate set
-        run: |
-          python scripts/retrieve_openalex.py --search-id O001 --query "supply chain management" --max-pages 2
-          python scripts/retrieve_openalex.py --search-id O002 --query "supply chain" --max-pages 2
-          python scripts/retrieve_openalex.py --search-id O003 --query "supply chain decision planning sourcing procurement production inventory logistics coordination disruption risk resilience sustainability" --max-pages 2
-          python scripts/retrieve_openalex.py --search-id O004 --query "supply chain optimization simulation analytics forecasting machine learning artificial intelligence digital twin blockchain internet of things autonomous" --max-pages 2
-      - name: Validate retrieval provenance
-        run: python scripts/validate_retrieval.py
-      - name: Build deduplicated candidate corpus
-        run: python scripts/build_openalex_candidate_corpus.py
-      - name: Assign deterministic stable candidate IDs
-        run: python scripts/assign_stable_record_ids.py artifacts/corpus/openalex_candidate_corpus.csv
-      - name: Independently verify DOI metadata with Crossref
-        run: python scripts/verify_crossref.py artifacts/corpus/openalex_candidate_corpus.csv
-      - name: Report candidate-corpus quality
-        run: python scripts/report_candidate_quality.py
+      # Discovery retrieval is intentionally not rerun in the frozen Stage-2 evidence workflow.
+      # Stage-2 uses the verified run-199 snapshot restored below; live OpenAlex refreshes
+      # belong to a separate discovery/audit workflow and must not mutate or block the frozen cohort.
       - name: Build screening flow when v3 ledger is present
         run: |
           if [ -f data/screening_log_v3.csv ]; then
