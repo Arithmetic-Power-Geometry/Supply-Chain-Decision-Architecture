@@ -151,6 +151,23 @@ jobs:
           assert all(r["adjudication_required"]=="yes" for r in rows)
           print("Batch-01 initialization passed: 25 unique records; no synthetic screening decisions.")
           PY
+      - name: Initialize next Stage-2 evidence batches
+        run: |
+          python scripts/init_stage2_batch.py --batch-id B02
+          python scripts/init_stage2_batch.py --batch-id B03
+          python scripts/init_stage2_batch.py --batch-id B04
+      - name: Verify next Stage-2 batches remain evidence-empty
+        run: |
+          python - <<'PY'
+          import csv
+          for bid in ("B02","B03","B04"):
+              p=f"artifacts/screening/stage2_execution/{bid}_source_verification_enriched.csv"
+              with open(p,newline="",encoding="utf-8") as f: rows=list(csv.DictReader(f))
+              assert len(rows)==25 and len({r["record_id"] for r in rows})==25
+              assert all(r["title"] and not r["eligibility_decision"] for r in rows)
+              assert all(r["source_status"]=="pending" and r["adjudication_required"]=="yes" for r in rows)
+          print("B02-B04 ready for parallel source verification; no synthetic decisions.")
+          PY
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
