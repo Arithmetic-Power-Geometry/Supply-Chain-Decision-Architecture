@@ -196,6 +196,20 @@ jobs:
           assert all(r["adjudication_required"]=="no" for r in rows)
           print("B03 Reviewer-A evidence closure passed: 21 include, 4 exclude.")
           PY
+      - name: Finalize and validate Stage-2 B04
+        run: |
+          python scripts/finalize_stage2_batch.py --base artifacts/screening/stage2_execution/B04_source_verification_enriched.csv --decisions data/screening/stage2_b04_verified_decisions_v1.csv --output artifacts/screening/stage2_execution/B04_source_verification_final.csv
+          python scripts/validate_stage2_batch_evidence.py --input artifacts/screening/stage2_execution/B04_source_verification_final.csv --audit artifacts/screening/stage2_execution/B04_final_evidence_audit.json
+          python - <<'PY'
+          import csv
+          p="artifacts/screening/stage2_execution/B04_source_verification_final.csv"
+          with open(p,newline="",encoding="utf-8") as f: rows=list(csv.DictReader(f))
+          assert len(rows)==25 and len({r["record_id"] for r in rows})==25
+          assert sum(r["eligibility_decision"]=="include" for r in rows)==17
+          assert sum(r["eligibility_decision"]=="exclude" for r in rows)==8
+          assert all(r["adjudication_required"]=="no" for r in rows)
+          print("B04 Reviewer-A evidence closure passed: 17 include, 8 exclude.")
+          PY
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
