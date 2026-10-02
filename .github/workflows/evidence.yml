@@ -148,6 +148,31 @@ jobs:
             artifacts/screening/stage2_execution/B16_source_verification_enriched.csv
           if-no-files-found: error
 
+      - name: Initialize final Stage-2 B17-B27 evidence wave
+        run: |
+          for B in B17 B18 B19 B20 B21 B22 B23 B24 B25 B26 B27; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus data/frozen/stage1_candidate_metadata_v1.csv --output-dir artifacts/screening/stage2_execution
+          done
+          python scripts/verify_stage2_wave.py B17 B18 B19 B20 B21 B22 B23 B24 B25 B26 B27 --execution-dir artifacts/screening/stage2_execution
+
+      - name: Upload final Stage-2 B17-B27 evidence wave immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-b17-b27-final-wave
+          path: |
+            artifacts/screening/stage2_execution/B17_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B18_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B19_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B20_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B21_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B22_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B23_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B24_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B25_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B26_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B27_source_verification_enriched.csv
+          if-no-files-found: error
+
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
       - name: Prepare blinded Stage-2 reliability sample shell
