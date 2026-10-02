@@ -1,0 +1,5 @@
+model,dimensions,coverage,collision_rate,distinct_signatures,signature_entropy,status
+K4,4,1.000000,0.555556,6,2.419382,pilot_only
+KS7,7,0.873016,0.333333,7,2.641604,pilot_only
+KSV8,8,0.888889,0.333333,7,2.641604,pilot_only
+SCDA9,9,0.901235,0.333333,7,2.641604,pilot_only
