@@ -227,12 +227,22 @@ jobs:
           assert all(r["adjudication_required"]=="no" for r in rows)
           print("B04 Reviewer-A evidence closure passed: 17 include, 8 exclude.")
           PY
+      - name: Restore frozen Stage-1 metadata snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts/frozen /tmp/scda-run199
+          curl -L --fail -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture/actions/artifacts/11215299923/zip" -o /tmp/scda-run199.zip
+          unzip -q /tmp/scda-run199.zip -d /tmp/scda-run199
+          cp /tmp/scda-run199/artifacts/corpus/openalex_candidate_corpus_stable.csv artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+          python scripts/verify_frozen_stage1_metadata.py
+
       - name: Initialize Stage-2 B05-B08 parallel evidence wave
         run: |
-          python scripts/init_stage2_batch.py --batch-id B05
-          python scripts/init_stage2_batch.py --batch-id B06
-          python scripts/init_stage2_batch.py --batch-id B07
-          python scripts/init_stage2_batch.py --batch-id B08
+          python scripts/init_stage2_batch.py --batch-id B05 --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+          python scripts/init_stage2_batch.py --batch-id B06 --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+          python scripts/init_stage2_batch.py --batch-id B07 --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
+          python scripts/init_stage2_batch.py --batch-id B08 --corpus artifacts/frozen/stage1_openalex_candidate_corpus_stable_v1.csv
           python scripts/verify_stage2_wave.py B05 B06 B07 B08
       - name: Build non-destructive Stage-2 scope audit queue
         run: python scripts/audit_stage2_scope.py
