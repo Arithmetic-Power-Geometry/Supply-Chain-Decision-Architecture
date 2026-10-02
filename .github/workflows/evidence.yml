@@ -51,6 +51,13 @@ jobs:
           else
             echo "Screening log not yet created; retrieval-stage run only."
           fi
+      - name: Compute independent coding reliability when available
+        run: |
+          if [ -f data/reliability/coder_a_v1.csv ] && [ -f data/reliability/coder_b_v1.csv ]; then
+            python scripts/compute_reliability.py data/reliability/coder_a_v1.csv data/reliability/coder_b_v1.csv
+          else
+            echo "Independent coder files not yet available; no reliability result is claimed."
+          fi
       - name: Build artifact manifest
         run: python scripts/build_manifest.py
       - name: Upload evidence artifact
