@@ -1,23 +1,50 @@
-# Large-Corpus Validation v1
+# Large-Corpus Validation v2 — IEEE TEM Benchmark-Plus Protocol
 
-This branch executes the active open-evidence protocol before any field-wide SCDA claim is written.
+## Benchmark
+The validation is designed against the methodological bar visible in recent IEEE Transactions on Engineering Management reviews: PRISMA-style transparent selection, substantive content synthesis, cross-disciplinary integration, and explicit managerial relevance. SCDA adds falsifiable architecture evaluation rather than relying only on thematic clustering.
 
-## Retrieval
-Four frozen OpenAlex query families are executed independently. Raw JSON pages and retrieval manifests are preserved as workflow evidence. The first validation run is deliberately bounded to two 100-record pages per family (maximum 800 raw records) so that screening and coding remain auditable.
+## Stage A — Discovery and provenance
+Execute the four frozen OpenAlex families. Preserve raw pages, timestamps, reported counts, cursor/page state, query-family provenance and SHA-256 manifests. Crossref verifies DOI metadata; publisher records resolve material discrepancies. Scopus/WoS are not reported unless actually executed.
 
-## Corpus construction
-Records are deduplicated by normalized DOI, then normalized title. Query-family provenance is retained. The resulting CSV is a **candidate corpus**, not an included-study corpus.
+## Stage B — Deduplication and eligibility
+Deduplicate by normalized DOI, then normalized title with manual resolution of near matches. Record inclusion/exclusion reason for every screened record. Reviews populate the review-of-reviews layer; primary studies populate quantitative validation.
 
-## Validation stages
-1. retrieval and provenance;
-2. DOI/title deduplication;
-3. eligibility screening;
-4. stratified sampling across eras and query families;
-5. claim-level SCDA coding with uncertainty;
-6. independent/second coding on a substantial sample;
-7. agreement statistics;
-8. K4/KS7/KSV8/SCDA9 comparison;
-9. leave-one-dimension-out ablation;
-10. comparator-framework stress test.
+## Stage C — Stratified corpus
+Build a corpus spanning historical era, discipline, decision level, process, method/technology family, evidence maturity and application context. Report stratum counts before analysis. Do not optimize sampling to make SCDA look favorable.
 
-No automated keyword classifier is allowed to stand in for scholarly claim coding. No large-corpus SCDA result is reported until stages 3--10 are complete.
+## Stage D — Claim-level coding
+The focal unit is a substantive research claim. A paper may contribute multiple claims, but claims from one paper are clustered under the same study identifier and never treated as independent publications in prevalence statistics. Preserve source basis and coding confidence.
+
+## Stage E — Reliability
+A second independent coding pass covers at least 20% of the frozen coded corpus, stratified across eras and major dimensions. Report raw agreement and Cohen's kappa for nominal single-label dimensions; use Krippendorff's alpha where missing/multi-label structure makes it preferable. Dimensions with weak reliability are revised, demoted or removed before model claims.
+
+## Stage F — Architecture competition
+Evaluate K4, KS7, KSV8 and SCDA9 on identical claims. Report coverage, collision rate, distinct signatures, entropy, complexity-adjusted information gain and leave-one-dimension-out ablation. Prefer the smallest representation preserving substantively useful distinctions with acceptable reliability.
+
+## Stage G — Strong literature baselines
+Reconstruct the strongest genuine multidimensional SCM frameworks from their original definitions. Compare codability and distinctions on the same frozen sample. One-dimensional function/method/technology controls remain diagnostics only and cannot support superiority claims.
+
+## Stage H — Generalization
+Use temporal and disciplinary holdouts. Fit/finalize coding rules without seeing the holdout results, then test whether architecture behavior persists in later-era and cross-discipline subsets. Report sensitivity to ambiguous records and alternative coding rules.
+
+## Stage I — Evidence-maturity test
+Construct matched decision/solution cases that differ in evidence maturity (conceptual, synthetic, simulation, benchmark, case study, observational, pilot, deployed, longitudinal). Test whether V changes interpretation after K and S are held comparable.
+
+## Stage J — Research-usefulness outputs
+Generate machine-readable decision maps, evidence maps, sparse-cell candidates, contradiction flags and artifact-to-result provenance. A sparse cell is not automatically called a research gap; gap claims require substantive interpretation and evidence.
+
+## Stage K — Managerial relevance
+For each robust decision/evidence pattern, state the managerial decision, demonstrated evidence level, boundary/context and practical implication. Do not translate technical sophistication into managerial effectiveness without evidence.
+
+## Publication gates
+No field-wide headline claim is written until:
+1. retrieval and screening are frozen;
+2. corpus provenance is complete;
+3. reliability is reported;
+4. comparator definitions are frozen;
+5. nested-model and ablation results reproduce in CI;
+6. temporal/disciplinary robustness is reported;
+7. all headline figures/tables regenerate from committed code and frozen data.
+
+## Falsification rule
+SCDA9 is not the default winner. If KS7 or KSV8 preserves the useful distinctions with better reliability/parsimony, the theory is simplified accordingly. A null result for V or I is a valid scientific result.
