@@ -5,3 +5,6 @@ C0025,SCDA-BA7CDCDBF41E9BCA,study_role,primary,,,Source is substantially review/
 C0026,SCDA-D08B6ECDCF712676,study_role,primary,,,Source is literature-synthesis oriented and retained-primary routing requires role adjudication before corpus freeze.,,Open publisher full text,pending_pre_reliability
 C0036,SCDA-EF0F46D643950617,study_role,primary,,,Conceptual literature-based paper may belong in review/framework synthesis rather than primary architecture observations.,,Institutional repository abstract,pending_pre_reliability
 C0041,SCDA-2E6D0EAA736D7835,study_role,primary,,,Paper examines projects and maturity and may function as review/commentary; role must be adjudicated before freeze.,,Authoritative publisher abstract,pending_pre_reliability
+C0051,SCDA-0E164A5BD5C47839,study_role,primary,,,Research-agenda paper may belong in framework synthesis rather than primary architecture observations.,,Authoritative publisher/institutional abstract,pending_pre_reliability
+C0052,SCDA-0620D79AE96B6A58,study_role,primary,,,Framework/synthesis character requires role adjudication before freeze.,,Authoritative abstract,pending_pre_reliability
+C0053,SCDA-6969D4A8E9A0CA60,study_role,primary,,,Synthesis/framework character requires role adjudication before freeze.,,Authoritative abstract,pending_pre_reliability
