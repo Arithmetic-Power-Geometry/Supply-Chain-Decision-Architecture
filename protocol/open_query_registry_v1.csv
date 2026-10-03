@@ -1,0 +1,5 @@
+search_id,family,purpose,query,date_from,date_to,status
+O001,core_phrase,high-precision SCM identity,"supply chain management",1900-01-01,2026-10-01,frozen
+O002,broad_phrase,broad supply-chain recall,"supply chain",1900-01-01,2026-10-01,frozen
+O003,decision_process,decision/process coverage,"supply chain decision planning sourcing procurement production inventory logistics coordination disruption risk resilience sustainability",1900-01-01,2026-10-01,frozen
+O004,method_technology,OR analytics and digital-method coverage,"supply chain optimization simulation analytics forecasting machine learning artificial intelligence digital twin blockchain internet of things autonomous",1900-01-01,2026-10-01,frozen

@@ -1,0 +1,21 @@
+record_id,decision,exclusion_reason,study_type,evidence_basis,source,status
+SCDA-D693484F2AECE78F,include,,primary,empirical SCM-practices model tested with 196 organizations,10.1016/j.omega.2004.08.002,resolved
+SCDA-3930A8270E762A2D,include,,primary,fuzzy decision-making approach for supplier evaluation and selection,10.1016/j.ijpe.2005.03.009,resolved
+SCDA-1CEC8B3C2C9220C8,include,,primary,inter-sector empirical comparison of GSCM drivers and practices in China,10.1016/j.jclepro.2005.01.003,resolved
+SCDA-E36ECA8AE9962BFD,include,,primary,conceptual analysis of maritime supply-chain vulnerability and crisis management,10.1016/j.intman.2005.09.008,resolved
+SCDA-8A2B46022A5953A9,include,,primary,cross-industry research on supply-chain collaboration strategies and implementation,10.1016/j.emj.2005.02.008,resolved
+SCDA-34F1AF662127F7DF,include,,primary,empirical information-sharing and information-quality study using 196 organizations,10.1016/j.dss.2006.02.011,resolved
+SCDA-035DBE12CD0A9D0A,include,,primary,empirical supply-chain vulnerability study using 760 executives,10.1016/j.pursup.2007.01.004,resolved
+SCDA-E2847B62565ED01F,include,,primary,develops comprehensive food-industry supply-chain CSR framework,10.1007/s10551-006-9038-0,resolved
+SCDA-E4181BAC1E4772CD,include,,primary,literature plus workshop/focus groups used to develop new demand-chain-management foundation,10.1016/j.indmarman.2005.10.003,resolved
+SCDA-1F6853CC83FDB6C5,include,,primary,cross-sectional manufacturer survey linking GSCM practices to closed-loop supply chains,10.1016/j.tre.2006.06.003,resolved
+SCDA-25A1A8DE090608C1,include,,primary,empirical analysis of GSCM pressures practices and performance in 89 Chinese automotive enterprises,10.1016/j.jclepro.2006.05.021,resolved
+SCDA-9E47BF7CFA16076C,include,,primary,survey of 171 Chinese manufacturers examining GSCM initiatives and outcomes,10.1016/j.jenvman.2006.09.003,resolved
+SCDA-AED7AE8C14C77935,include,,primary,interpretive structural model of variables influencing supply-chain agility,10.1016/j.indmarman.2005.12.004,resolved
+SCDA-847B80C491DD21C5,include,,review,publisher explicitly labels review article; reviews quantitative SCRM models and strategies,10.1016/j.ijpe.2005.12.006,resolved
+SCDA-F935520B5295424C,include,,primary,empirical validation of GSCM implementation measurement models using 341 manufacturers,10.1016/j.ijpe.2006.11.029,resolved
+SCDA-1A5DFF0F42065364,include,,primary,survey-based empirical test of environmental supply-chain collaboration and manufacturing performance,10.1016/j.ijpe.2006.11.030,resolved
+SCDA-C7110C9E80C5D374,include,,primary,empirical investigation of organizational correlates of GSCM adoption in Chinese manufacturers,10.1016/j.omega.2006.11.009,resolved
+SCDA-C66454BF5D2D80F2,include,,primary,develops SCM balanced scorecard supported by three SME case studies,10.1016/j.cie.2007.04.001,resolved
+SCDA-20FF861DC2FDFAE3,include,,primary,theory-building paper on strategic RFID value in SCM with four propositions,10.1016/j.pursup.2007.11.001,resolved
+SCDA-77D717BF36E15FCC,include,,primary,empirical study linking IT integration flexibility agility and competitive performance,10.1016/j.ijpe.2008.09.002,resolved

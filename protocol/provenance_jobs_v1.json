@@ -1,0 +1,13 @@
+{
+  "jobs": [
+    {"id":"candidate_corpus","script":"scripts/build_openalex_candidate_corpus.py","inputs":["data/raw/openalex"],"outputs":["artifacts/corpus/openalex_candidate_corpus.csv"],"paper_objects":["Methods: identification"]},
+    {"id":"crossref_audit","script":"scripts/verify_crossref.py","inputs":["artifacts/corpus/openalex_candidate_corpus.csv"],"outputs":["artifacts/corpus/crossref_verification_summary_v2.json"],"paper_objects":["Methods: metadata verification"]},
+    {"id":"screening_flow","script":"scripts/build_screening_flow.py","inputs":["artifacts/corpus/openalex_candidate_corpus.csv","data/screening_log_v3.csv"],"outputs":["artifacts/corpus/screening_flow_v1.json"],"paper_objects":["Study-selection flow"]},
+    {"id":"model_competition","script":"scripts/run_model_competition.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/model_competition/nested_primary_v1.json","artifacts/model_competition/nested_sensitivity_v1.json","artifacts/model_competition/scda9_ablation_v1.json"],"paper_objects":["Results: architecture competition"]},
+    {"id":"generalization","script":"scripts/run_generalization.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/generalization/generalization_report_v1.json"],"paper_objects":["Results: generalization"]},
+    {"id":"evidence_layer","script":"scripts/run_evidence_layer_test.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/evidence_layer/matched_case_v1.json"],"paper_objects":["Results: evidence-layer falsification"]},
+    {"id":"context_layer","script":"scripts/run_context_layer_test.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/context_layer/matched_case_v1.json"],"paper_objects":["Results: context-layer falsification"]},
+    {"id":"robustness","script":"scripts/run_robustness.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/robustness/robustness_v1.json"],"parameters":{"bootstrap":500},"paper_objects":["Results: robustness"]},
+    {"id":"managerial_value","script":"scripts/run_managerial_value.py","inputs":["data/large_corpus_claims_v1.csv"],"outputs":["artifacts/managerial/decision_usefulness_v1.json"],"paper_objects":["Managerial Relevance Statement","Results: managerial usefulness"]}
+  ]
+}

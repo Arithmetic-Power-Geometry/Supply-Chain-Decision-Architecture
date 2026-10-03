@@ -11,29 +11,281 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Install package
         run: python -m pip install -e .
-
       - name: Run tests
         run: python -m unittest discover -s tests -p 'test*.py' -v
-
       - name: Run synthetic benchmark
         run: python benchmarks/run_benchmark.py
-
       - name: Run claim-level calibration
         run: python scripts/run_primary_pilot.py
+      # Discovery retrieval is intentionally not rerun in the frozen Stage-2 evidence workflow.
+      # Stage-2 uses the verified run-199 snapshot restored below; live OpenAlex refreshes
+      # belong to a separate discovery/audit workflow and must not mutate or block the frozen cohort.
+      - name: Build screening flow when v3 ledger is present
+        run: |
+          if [ -f data/screening_log_v3.csv ]; then
+            python scripts/build_screening_flow.py
+          else
+            echo "Two-stage screening ledger not yet populated."
+          fi
+      - name: Validate screening when screening log is present
+        run: |
+          if [ -f data/screening_log_v2.csv ]; then
+            python scripts/validate_screening.py
+          else
+            echo "Screening log not yet created; retrieval-stage run only."
+          fi
+      - name: Finalize Reviewer-A Stage-1 screening
+        run: python scripts/finalize_stage1.py
+      - name: Verify Stage-1 freeze artifacts
+        run: |
+          python - <<'PY'
+          import csv, json
+          with open("artifacts/screening/stage1_final_audit.json") as f:
+              a=json.load(f)
+          assert a["candidate_records"]==705
+          assert a["unique_record_ids"]==705
+          assert a["adjudications"]==147
+          assert a["include"]==659 and a["exclude"]==46 and a["uncertain"]==0
+          assert a["stage2_queue"]==659
+          with open("artifacts/screening/stage2_queue.csv", newline="", encoding="utf-8") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==659
+          assert len({r["record_id"] for r in rows})==659
+          print("Reviewer-A Stage-1 freeze checks passed.")
+          PY
+      - name: Restore frozen Stage-1 metadata snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/frozen /tmp/scda-freeze
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture/actions/artifacts/11215299923/zip" -o /tmp/scda-freeze/run199.zip
+          echo "bbcb768fce87845525e13f3f652271c81568a556f73c1181766eb441b526ea11  /tmp/scda-freeze/run199.zip" | sha256sum -c -
+          unzip -p /tmp/scda-freeze/run199.zip artifacts/corpus/openalex_candidate_corpus_stable.csv > data/frozen/stage1_candidate_metadata_v1.csv
+          python - <<'PY'
+          import csv
+          p="data/frozen/stage1_candidate_metadata_v1.csv"
+          with open(p,newline="",encoding="utf-8") as f: rows=list(csv.DictReader(f))
+          ids={r["record_id"] for r in rows}
+          assert len(rows)==705 and len(ids)==705
+          assert "SCDA-28ADCDD54D899FD6" in ids
+          print("Frozen Stage-1 metadata restored and verified: 705 unique records.")
+          PY
+      - name: Initialize Stage-2 full-text ledger
+        run: python scripts/init_stage2_ledger.py
+      - name: Verify Stage-2 ledger initialization
+        run: |
+          python - <<'PY'
+          import csv
+          p="artifacts/screening/stage2_screening_ledger.csv"
+          with open(p,newline="",encoding="utf-8") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==659
+          assert len({r["record_id"] for r in rows})==659
+          assert all(r["full_text_status"]=="pending" for r in rows)
+          assert all(r["stage2_decision"]=="" for r in rows)
+          assert all(r["adjudication_required"]=="yes" for r in rows)
+          print("Stage-2 initialization checks passed: 659 unique pending records.")
+          PY
+      - name: Build deterministic Stage-2 acquisition batches
+        run: python scripts/build_stage2_acquisition_batches.py
+      - name: Verify Stage-2 acquisition batches
+        run: |
+          python - <<'PY'
+          import csv, glob
+          files=sorted(glob.glob("artifacts/screening/stage2_acquisition_batches/B*.csv"))
+          rows=[]
+          for p in files:
+              with open(p,newline="",encoding="utf-8") as f:
+                  rows.extend(csv.DictReader(f))
+          assert len(files)==27
+          assert len(rows)==659
+          assert len({r["record_id"] for r in rows})==659
+          assert all(r["full_text_status"]=="pending" for r in rows)
+          print("Stage-2 acquisition batching passed: 27 batches, 659 unique records.")
+          PY
+      # B01-B08 are immutable completed evidence batches. Their decision ledgers are
+      # versioned in data/screening and their hard gates passed in historical CI runs.
+      # Active execution begins at B09; completed batches are never re-finalized here.
+      - name: Initialize Stage-2 B09-B12 parallel evidence wave
+        run: |
+          for B in B09 B10 B11 B12; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus data/frozen/stage1_candidate_metadata_v1.csv
+          done
+          python scripts/verify_stage2_wave.py B09 B10 B11 B12 --execution-dir artifacts/screening/stage2_execution
 
+      - name: Upload B09-B12 evidence wave immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-b09-b12-wave
+          path: |
+            artifacts/screening/stage2_execution/B09_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B10_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B11_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B12_source_verification_enriched.csv
+          if-no-files-found: error
+
+      - name: Initialize Stage-2 B13-B16 parallel evidence wave
+        run: |
+          for B in B13 B14 B15 B16; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus data/frozen/stage1_candidate_metadata_v1.csv --output-dir artifacts/screening/stage2_execution
+          done
+          python scripts/verify_stage2_wave.py B13 B14 B15 B16 --execution-dir artifacts/screening/stage2_execution
+
+      - name: Upload B13-B16 evidence wave immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-b13-b16-wave
+          path: |
+            artifacts/screening/stage2_execution/B13_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B14_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B15_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B16_source_verification_enriched.csv
+          if-no-files-found: error
+
+      - name: Initialize final Stage-2 B17-B27 evidence wave
+        run: |
+          for B in B17 B18 B19 B20 B21 B22 B23 B24 B25 B26 B27; do
+            python scripts/init_stage2_batch.py --batch-id "$B" --corpus data/frozen/stage1_candidate_metadata_v1.csv --output-dir artifacts/screening/stage2_execution
+          done
+          python scripts/verify_stage2_wave.py B17 B18 B19 B20 B21 B22 B23 B24 B25 B26 B27 --execution-dir artifacts/screening/stage2_execution
+
+      - name: Upload final Stage-2 B17-B27 evidence wave immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-b17-b27-final-wave
+          path: |
+            artifacts/screening/stage2_execution/B17_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B18_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B19_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B20_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B21_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B22_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B23_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B24_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B25_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B26_source_verification_enriched.csv
+            artifacts/screening/stage2_execution/B27_source_verification_enriched.csv
+          if-no-files-found: error
+
+      - name: Reconcile final Stage-2 manifest
+        run: python scripts/build_stage2_final_manifest.py
+
+      - name: Validate production claim ledger
+        run: python scripts/validate_production_claims.py data/production_claims_v1.csv
+
+      - name: Build non-destructive Stage-2 scope audit queue
+        run: python scripts/audit_stage2_scope.py
+      - name: Prepare blinded Stage-2 reliability sample shell
+        run: python scripts/prepare_stage2_reliability_sample.py
+      - name: Verify reliability sample shell
+        run: |
+          python - <<'PY'
+          import csv
+          with open("artifacts/reliability/stage2_coder_b_sample.csv",newline="",encoding="utf-8") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==132
+          assert len({r["record_id"] for r in rows})==132
+          assert all(r["coder_b_status"]=="pending" and not r["coder_b_decision"] for r in rows)
+          print("Reliability sample shell passed: 132 unique records; no generated coder-B judgments.")
+          PY
+      - name: Audit Stage-2 acquisition and eligibility status
+        run: python scripts/audit_stage2_status.py
+      - name: Generate G20 readiness report
+        if: always()
+        run: python scripts/run_g20_readiness.py
+      - name: Validate paper claim map when populated
+        run: |
+          if [ -f data/paper_claim_map_v1.csv ]; then
+            python scripts/validate_paper_claims.py data/paper_claim_map_v1.csv
+          else
+            echo "Final paper claim map not yet populated; headline claims remain unfrozen."
+          fi
+      - name: Build provenance graph when frozen corpus is available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ] && [ -f data/screening_log_v3.csv ]; then
+            python scripts/build_provenance_graph.py protocol/provenance_jobs_v1.json
+          else
+            echo "Downstream corpus not yet frozen; final provenance graph remains pending."
+          fi
+      - name: Report current manuscript mechanics
+        continue-on-error: true
+        run: python scripts/audit_manuscript_mechanics.py paper/main.tex
+      - name: Report current blind-manuscript identity risks
+        continue-on-error: true
+        run: python scripts/audit_blind_manuscript.py paper/main.tex
+      - name: Report current front-matter compliance
+        continue-on-error: true
+        run: python scripts/audit_frontmatter.py paper/main.tex
+      - name: Audit manuscript bibliography integrity
+        run: python scripts/audit_references.py paper/main.tex paper/references.bib
+      - name: Validate claim provenance when ledger is available
+        run: |
+          if [ -f data/claim_provenance_v1.csv ]; then
+            python scripts/validate_claim_provenance.py data/claim_provenance_v1.csv
+          else
+            echo "Claim provenance ledger not yet populated; semantic support remains pending."
+          fi
+      - name: Evaluate managerial decision usefulness when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_managerial_value.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; managerial-usefulness conclusions remain pending."
+          fi
+      - name: Run robustness battery when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_robustness.py data/large_corpus_claims_v1.csv --bootstrap 500
+          else
+            echo "Large-corpus claims not yet frozen; robustness conclusions remain pending."
+          fi
+      - name: Test incremental context-layer value when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_context_layer_test.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; context-layer value remains untested."
+          fi
+      - name: Test incremental evidence-layer value when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_evidence_layer_test.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; evidence-layer value remains untested."
+          fi
+      - name: Run generalization tests when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_generalization.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; holdout remains unopened."
+          fi
+      - name: Run frozen model competition when large-corpus claims are available
+        run: |
+          if [ -f data/large_corpus_claims_v1.csv ]; then
+            python scripts/run_model_competition.py data/large_corpus_claims_v1.csv
+          else
+            echo "Large-corpus claims not yet frozen; no architecture winner is claimed."
+          fi
+      - name: Compute independent coding reliability when available
+        run: |
+          if [ -f data/reliability/coder_a_v1.csv ] && [ -f data/reliability/coder_b_v1.csv ]; then
+            python scripts/compute_reliability.py data/reliability/coder_a_v1.csv data/reliability/coder_b_v1.csv
+          else
+            echo "Independent coder files not yet available; no reliability result is claimed."
+          fi
       - name: Build artifact manifest
         run: python scripts/build_manifest.py
-
       - name: Upload evidence artifact
         uses: actions/upload-artifact@v4
         with:
           name: scda-evidence
-          path: artifacts/
+          path: |
+            artifacts/
+            data/raw/openalex/*/retrieval_manifest.json

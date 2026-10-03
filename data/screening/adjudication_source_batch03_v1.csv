@@ -1,0 +1,21 @@
+record_id,decision,exclusion_reason,study_type,evidence_basis,source,status
+SCDA-3E6D580320CE0756,include,,primary,Springer chapter is a substantive SCM risk contribution in Supply Chain Risk,10.1007/978-0-387-79934-6_17,resolved
+SCDA-9D04C9BD18B256B6,include,,primary,publisher abstract reports study of drivers and barriers to environmental SCM practices,10.1016/j.pursup.2008.01.007,resolved
+SCDA-E50F72269797C393,include,,primary,source abstract reports factor-analysis examination of GSCM implementation in Taiwanese electronics,10.1007/BF03326014,resolved
+SCDA-94A456D63513C775,exclude,E10,other,publisher explicitly classifies item as editorial introducing a special issue,10.1016/j.jclepro.2008.02.002,resolved
+SCDA-A283343262602A61,include,,primary,publisher abstract presents unified framework and five models for flexibility-based supply-chain risk mitigation,10.1016/j.ijpe.2008.07.008,resolved
+SCDA-1D6260CA1394C02F,include,,review,publisher abstract explicitly reviews tourism SCM research and develops a research agenda,10.1016/j.tourman.2008.12.010,resolved
+SCDA-E8D9C0008C8E90BF,include,,primary,publisher abstract develops ISM model of GSCM implementation drivers and validates it with a manufacturing case,10.1016/j.resconrec.2010.12.002,resolved
+SCDA-D5FAC3C18A71D033,include,,primary,publisher abstract applies DEMATEL to carbon-management criteria for green supplier selection,10.1016/j.jclepro.2011.09.012,resolved
+SCDA-E08DCDED96CC072A,include,,primary,publisher identifies research article using fuzzy DEMATEL to model GSCM practice relationships,10.1016/j.jclepro.2011.06.010,resolved
+SCDA-103D4041DB82C812,include,,primary,publisher identifies research article presenting logistics/SCM principles methods policy and practice,10.1016/j.retrec.2012.10.006,resolved
+SCDA-FD56F0A03A1F365B,include,,primary,Springer chapter republishes substantive foundational SCM strategy contribution,10.1007/978-3-642-27922-5_15,resolved
+SCDA-BC81D3CBF7AC9E98,include,,primary,publisher identifies research article and survey of SSCM implementation and performance in Malaysian manufacturers,10.1016/j.ijpe.2012.02.008,resolved
+SCDA-1820CAFC035DE6C0,include,,primary,publisher identifies research article applying ISM/expert judgments to GSCM implementation barriers,10.1016/j.jclepro.2012.10.042,resolved
+SCDA-36320CEB8B00DD67,include,,primary,publisher abstract applies AHP and sensitivity analysis to GSCM implementation barriers,10.1016/j.ijpe.2013.08.018,resolved
+SCDA-4E5F1DA06096F898,include,,primary,publisher abstract develops and empirically tests institutional-theory GSCM model using 396 manufacturers,10.1016/j.pursup.2012.12.001,resolved
+SCDA-83417DE94A161205,include,,review,publisher explicitly labels item Review and synthesizes food-supply-chain traceability for safety and quality,10.1016/j.foodcont.2013.11.007,resolved
+SCDA-7762FA4626D5997F,include,,primary,publisher identifies research article developing data-quality problem and research/application directions for SCM analytics,10.1016/j.ijpe.2014.04.018,resolved
+SCDA-BA0C559B1E781920,include,,primary,publisher abstract derives conceptual model and tests propositions with five automotive supply-chain cases,10.1016/j.jclepro.2014.05.068,resolved
+SCDA-5C4AFFB5CC3D2A44,include,,primary,publisher abstract reports Toyota/Renesas disruption case and coordination analysis after Tohoku earthquake,10.1016/j.ijpe.2014.07.010,resolved
+SCDA-358EA1BA43735A0C,include,,review,publisher states critical analysis/review linking SSCM literature and dynamic capabilities in food industry,10.1016/j.ijpe.2013.12.026,resolved

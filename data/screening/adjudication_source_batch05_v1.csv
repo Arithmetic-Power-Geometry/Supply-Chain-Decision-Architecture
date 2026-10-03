@@ -1,0 +1,21 @@
+record_id,decision,exclusion_reason,study_type,evidence_basis,source,status
+SCDA-A5E8B4C48503192F,include,,primary,publisher abstract substantively analyzes blockchain mechanisms for supply-chain resilience,10.1016/j.bushor.2018.08.012,resolved
+SCDA-0DC42F196B4E7006,include,,primary,institutional repository confirms scholarly SCRM chapter reviewing OR/AI decision-support methods and future DSS directions,10.1007/978-3-030-03813-7_4,resolved
+SCDA-CF6BF2C024968C8A,include,,review,publisher explicitly reviews state-of-the-art digital-supply-chain literature and proposes future framework,10.1016/j.compind.2018.02.010,resolved
+SCDA-2A8A1959CCD4AB2F,include,,primary,publisher identifies empirical study linking GHRM GSCM practices and sustainable performance,10.1016/j.jclepro.2018.09.062,resolved
+SCDA-0AF3640C5D78F9F9,include,,review,publisher explicitly labels structured literature review of circular supply-chain management,10.1016/j.jclepro.2019.04.303,resolved
+SCDA-2AAB6D92FECDF5C8,include,,primary,publisher presents novel collaboration-planning DSS and three food-network pilots,10.1016/j.jclepro.2019.04.367,resolved
+SCDA-BBE29379D27E8736,include,,review,publisher title and method explicitly identify systematic literature review of supply-chain finance,10.1016/j.ijpe.2019.04.013,resolved
+SCDA-66FBF390DA0CC50B,include,,primary,publisher reports ISM-DEMATEL modeling of blockchain traceability enablers in agriculture supply chains,10.1016/j.ijinfomgt.2019.05.023,resolved
+SCDA-B889B011BE720FE4,include,,review,publisher explicitly presents systematic review and classification of quantitative supply-chain-resilience methods,10.1016/j.tre.2019.03.001,resolved
+SCDA-6B3C99D4767688D4,include,,review,publisher explicitly labels systematic literature review of sustainability metrics in supply-chain network design,10.1016/j.jclepro.2019.05.278,resolved
+SCDA-16528FF18D15B97C,include,,primary,publisher reports SME survey and TOE/PLS-ANN analysis of blockchain adoption in operations and SCM,10.1016/j.ijinfomgt.2019.08.005,resolved
+SCDA-A7BFA6FC91A1B3D0,include,,review,publisher describes literature-review method and synthesis of Industry 4.0/blockchain capabilities for sustainable supply chains,10.1016/j.resconrec.2020.105064,resolved
+SCDA-8F6A8B45AFF680B0,include,,primary,publisher reports theory-grounded barrier analysis with academic/practitioner inputs and DEMATEL,10.1016/j.ijpe.2020.107831,resolved
+SCDA-870400DB19B9E0B8,include,,review,publisher reports evaluation of 178 articles on blockchain implementation in supply-chain operations,10.1016/j.tre.2020.102067,resolved
+SCDA-994CFBFCB72EC0A6,include,,primary,publisher/PubMed reports mixed-method resilience study using TTR financial analysis survey and executive interviews,10.1016/j.techfore.2020.120447,resolved
+SCDA-9C452CE0B53244C7,include,,primary,publisher/PubMed reports simulation-based analysis of epidemic disruption impacts on global supply chains,10.1016/j.tre.2020.101922,resolved
+SCDA-9A04B63D8A3CC542,include,,primary,institutional/publisher metadata reports case studies and interviews with 500+ stakeholders plus proposed emergency supply-chain infrastructure,10.1007/s10479-020-03708-3,resolved
+SCDA-62EA04749A45C2E9,include,,review,publisher explicitly labels review article using content bibliometric and decision-analysis synthesis for SSCM disruption/ambidexterity,10.1016/j.spc.2020.09.017,resolved
+SCDA-CE7FB2834BC9DE39,include,,review,publisher explicitly identifies comprehensive literature review of blockchain applications in supply chains,10.1016/j.cie.2021.107133,resolved
+SCDA-DF0EBA1E858640FE,exclude,E02,other,PubMed abstract establishes broad AI-for-SDGs panoramic/SWOT study rather than substantive SCM research,10.1007/s10489-021-02264-y,resolved

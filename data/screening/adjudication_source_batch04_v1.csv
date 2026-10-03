@@ -1,0 +1,21 @@
+record_id,decision,exclusion_reason,study_type,evidence_basis,source,status
+SCDA-8C9B2C454248F77F,include,,review,publisher explicitly classifies bibliometric GSCM synthesis as Review,10.1016/j.ijpe.2015.01.003,resolved
+SCDA-B68AFCAC8A6AC540,include,,primary,publisher reports two case studies comparing circular and linear supply-chain environmental performance,10.1016/j.omega.2015.05.015,resolved
+SCDA-C1C56331C84D9B0D,include,,review,publisher explicitly classifies article as Review and reviews/classifies big-data analytics in logistics and SCM,10.1016/j.ijpe.2016.03.014,resolved
+SCDA-8ACDFF136EF09926,include,,primary,publisher abstract develops and tests resource-based model of big-data/predictive-analytics assimilation and supply-chain performance,10.1016/j.jbusres.2016.08.004,resolved
+SCDA-C147047358780E64,include,,primary,publisher reports resilient network-design optimization model and real-life case study under competition/disruption,10.1016/j.ejor.2016.11.041,resolved
+SCDA-7B8AD5AECD9C79C2,include,,primary,publisher classifies research article combining systematic review with TISM/MICMAC to develop SSCM drivers framework,10.1016/j.jclepro.2016.03.117,resolved
+SCDA-479A3C12133092CA,include,,primary,publisher reports novel risk-sharing contract integer-programming model and automotive case study,10.1016/j.cie.2016.11.034,resolved
+SCDA-E5F328A68EC62FC4,include,,primary,publisher classifies research article analyzing blockchain roles against key SCM objectives,10.1016/j.ijinfomgt.2017.12.005,resolved
+SCDA-1ADB8DC751AA397F,include,,review,publisher technical note reviews BDA research/application in SCM from 2010-2016 and provides industry insights,10.1016/j.cie.2017.11.017,resolved
+SCDA-17E05590F2AF5456,include,,review,publisher abstract explicitly states state-of-the-art literature review and classification framework for BDA in SCM,10.1016/j.cor.2017.07.004,resolved
+SCDA-425B6FB7A9400C2D,include,,review,publisher explicitly classifies article as Review of sustainability evolution in SCM,10.1016/j.jclepro.2017.05.026,resolved
+SCDA-89679DAA15F977CB,include,,primary,publisher abstract presents game-theoretic analysis of retailer price/service decisions under demand disruption,10.1016/j.jretconser.2017.08.025,resolved
+SCDA-1427AB061579E480,include,,primary,publisher perspective quantitatively analyzes battery-material supply constraints versus future demand,10.1016/j.joule.2017.08.019,resolved
+SCDA-AC0D358AE22F2D6F,include,,primary,publisher abstract empirically tests SSCM practices dynamic capabilities and enterprise performance using 209 manufacturers,10.1016/j.jclepro.2017.06.093,resolved
+SCDA-9AC8B49520D52B66,include,,primary,institutional repository abstract reports theoretical model tested with survey data from 312 Indian manufacturers,10.1007/s10479-017-2544-x,resolved
+SCDA-C6CB29C8C995D043,exclude,E02,other,publisher abstract establishes focus as big-data analytics in sustainable smart manufacturing/product lifecycle rather than substantive SCM research,10.1016/j.jclepro.2018.11.025,resolved
+SCDA-952D81CE3EA7EE6C,include,,primary,institutional repository abstract presents fuzzy AHP-TOPSIS supply-partner selection framework for humanitarian procurement,10.1007/s10479-018-2981-1,resolved
+SCDA-76E49418701C85AD,include,,review,publisher explicitly classifies article as Review of GSCM trends and future challenges,10.1016/j.resconrec.2018.10.009,resolved
+SCDA-A609A3B3FBEC015F,include,,primary,institutional repository identifies multicriteria Master Planning decision-support system for sustainable humanitarian supply chain,10.1007/s10479-018-2882-3,resolved
+SCDA-AFAF639543EC73FD,include,,review,publisher explicitly classifies systematic review of SSCM in global supply chains,10.1016/j.jclepro.2018.10.033,resolved
