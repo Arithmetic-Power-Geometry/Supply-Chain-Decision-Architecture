@@ -1,0 +1,15 @@
+{
+  "claims": 124,
+  "studies": 121,
+  "claim_digest_sha256": "c4dfb379c8bfc25c8725d81f5172d6f2bed6ae871d03c755e5fe2213e03b1a29",
+  "primary_tolerance": 0.02,
+  "primary_lambda": 0.02,
+  "selected_primary": "SCDA9",
+  "model_definition": {
+    "K4": ["decision_level","process","flow","objective"],
+    "KS7": ["decision_level","process","flow","objective","theory","method","technology"],
+    "KSV8": ["decision_level","process","flow","objective","theory","method","technology","evidence_maturity"],
+    "SCDA9": ["decision_level","process","flow","objective","theory","method","technology","evidence_maturity","context"]
+  },
+  "note": "Second-coder green signal recorded as independent verification/consensus; no kappa fabricated without independent categorical return."
+}
