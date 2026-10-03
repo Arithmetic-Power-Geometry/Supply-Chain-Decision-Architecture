@@ -1,0 +1,5 @@
+test,stratum,claims,studies,selected,K4_collision,KS7_collision,KSV8_collision,SCDA9_collision,K4_coverage,KS7_coverage,KSV8_coverage,SCDA9_coverage
+partition,development,100,97,SCDA9,0.5,0.2,0.19,0.15,1.0,0.8814285714285715,0.89625,0.9077777777777778
+partition,holdout,24,24,KS7,0.20833333333333334,0.0,0.0,0.0,1.0,0.875,0.890625,0.9027777777777778
+temporal_partition,development,124,121,SCDA9,0.5241935483870968,0.1935483870967742,0.1774193548387097,0.12903225806451613,1.0,0.880184331797235,0.8951612903225806,0.9068100358422939
+temporal_partition,holdout,0,0,,,,,,,,,
