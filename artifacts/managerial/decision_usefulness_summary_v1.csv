@@ -1,0 +1,6 @@
+diagnostic,claims,ambiguous_claims,ambiguity_rate
+technology_hides_decision,124,120,0.967741935483871
+method_hides_decision,124,123,0.9919354838709677
+solution_hides_decision,124,92,0.7419354838709677
+same_KS_different_evidence,124,9,0.07258064516129033
+same_KSV_different_context,124,13,0.10483870967741936
