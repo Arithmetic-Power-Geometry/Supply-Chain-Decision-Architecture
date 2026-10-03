@@ -1,0 +1,33 @@
+{
+  "version": "SCDA final results freeze v1",
+  "corpus": {
+    "deep_review_studies": 125,
+    "primary_analytical_studies": 121,
+    "review_framework_studies": 4,
+    "analytical_claims": 124,
+    "claim_digest_sha256": "c4dfb379c8bfc25c8725d81f5172d6f2bed6ae871d03c755e5fe2213e03b1a29"
+  },
+  "primary_result": {
+    "selected": "SCDA9",
+    "collision_tolerance": 0.02,
+    "lambda": 0.02
+  },
+  "validation": {
+    "publication_holdout_selected": "KS7",
+    "temporal_2024_2026": "not testable; zero analytical studies",
+    "bootstrap_500": {
+      "KS7": 202,
+      "KSV8": 115,
+      "SCDA9": 183,
+      "K4": 0
+    }
+  },
+  "managerial": {
+    "technology_ambiguity": 0.9677419355,
+    "method_ambiguity": 0.9919354839,
+    "solution_ambiguity": 0.7419354839,
+    "same_KS_different_evidence": 0.0725806452,
+    "same_KSV_different_context": 0.1048387097
+  },
+  "interpretation": "SCDA9 is selected under the frozen primary full-corpus specification; validation supports a layered architecture but does not establish universal SCDA9 irreducibility."
+}
