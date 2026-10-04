@@ -7,13 +7,6 @@ date-released: 2026-10-04
 authors:
   - family-names: "Akhtar"
     given-names: "Mohammad Amir Khusru"
-    orcid: "https://orcid.org/0000-0002-5826-5378"
-  - family-names: "Khalid"
-    given-names: "Md Saifullah"
-  - family-names: "Hans"
-    given-names: "Arvind"
-  - family-names: "Nayyar"
-    given-names: "Anand"
 doi: "10.5281/zenodo.23134495"
 url: "https://doi.org/10.5281/zenodo.23134495"
 repository-code: "https://github.com/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture"
