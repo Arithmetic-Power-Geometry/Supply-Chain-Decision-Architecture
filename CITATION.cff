@@ -1,10 +1,30 @@
 cff-version: 1.2.0
-message: "If you use this software or its research artifacts, please cite the repository."
-title: "Supply Chain Decision Architecture"
-version: 0.1.0
-date-released: 2026-10-01
+message: "If you use this repository, software, data, or research artifacts, please cite the associated research work."
+title: "The Decision Architecture of Supply Chain Management: Separating Decisions, Solutions, Evidence, and Context"
+type: dataset
+version: "V1"
+date-released: 2026-10-04
 authors:
   - family-names: "Akhtar"
     given-names: "Mohammad Amir Khusru"
+    orcid: "https://orcid.org/0000-0002-5826-5378"
+  - family-names: "Khalid"
+    given-names: "Md Saifullah"
+  - family-names: "Hans"
+    given-names: "Arvind"
+  - family-names: "Nayyar"
+    given-names: "Anand"
+doi: "10.5281/zenodo.23134495"
+url: "https://doi.org/10.5281/zenodo.23134495"
 repository-code: "https://github.com/Arithmetic-Power-Geometry/Supply-Chain-Decision-Architecture"
 license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "The Decision Architecture of Supply Chain Management: Separating Decisions, Solutions, Evidence, and Context"
+  authors:
+    - family-names: "Akhtar"
+      given-names: "Mohammad Amir Khusru"
+  year: 2026
+  version: "V1"
+  doi: "10.5281/zenodo.23134495"
+  url: "https://doi.org/10.5281/zenodo.23134495"
