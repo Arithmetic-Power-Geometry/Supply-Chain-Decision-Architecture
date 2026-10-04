@@ -1,0 +1,5 @@
+coder,transition,observed_reduction,null_mean,null_95_low,null_95_high,replicates
+A,KS7_to_KSV8,0.016,0.081,0.040,0.120,5000
+A,KSV8_to_SCDA9,0.048,0.103,0.064,0.144,5000
+B,KS7_to_KSV8,0.024,0.085,,,5000
+B,KSV8_to_SCDA9,0.096,0.119,,,5000

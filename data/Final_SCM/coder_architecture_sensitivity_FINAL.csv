@@ -1,0 +1,9 @@
+coder,model,collision_rate,selected_tau_0.02
+A,K4,0.488,No
+A,KS7,0.184,No
+A,KSV8,0.168,No
+A,SCDA9,0.120,Yes
+B,K4,0.912,No
+B,KS7,0.776,No
+B,KSV8,0.752,No
+B,SCDA9,0.656,Yes

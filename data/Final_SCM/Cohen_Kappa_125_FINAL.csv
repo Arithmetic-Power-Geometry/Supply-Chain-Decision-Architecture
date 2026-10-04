@@ -1,0 +1,10 @@
+dimension,n,raw_agreement,cohen_kappa
+decision_level,125,0.448,0.035666
+process,125,0.288,0.074690
+flow,125,0.640,0.539840
+objective,125,0.600,0.493271
+theory,125,0.864,0.205607
+method,125,0.504,0.227626
+technology,125,0.896,0.712237
+evidence_maturity,125,0.592,0.363200
+context,125,0.488,0.177293
