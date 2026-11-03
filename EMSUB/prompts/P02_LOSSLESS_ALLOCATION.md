@@ -1,0 +1,5 @@
+# P02 — No-loss main/supplement allocation
+
+Treat the uploaded latest source and archive as the source of truth. Preserve original LaTeX, BibTeX, all four figures and both PDFs. In the main article retain the decision architecture, essential review protocol and screening, primary comparisons, weak inter-coder reliability, holdout counterevidence, permutation-null limitation, managerial evidence, and a qualified discussion. In the supplement retain extended thematic and historical reviews, supplementary 5 tables, coding distributions, full coder-sensitivity/robustness discussion, disciplinary and matched-case details, bootstrap figure, and publication generalisation algorithm. Five principal tables are a separate tables submission file; three essential figures and one algorithm stay in main.
+
+**Execution 2026-11-03:** Allocation and original archive completed in conversation LaTeX package; source text was preserved rather than deleted. See ../audit/CONTENT_ALLOCATION.md. Proceed to P03.
