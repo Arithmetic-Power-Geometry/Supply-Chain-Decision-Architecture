@@ -1,7 +1,7 @@
 # Technical QA checklist — execution 2026-11-03
 
 - Main, separate tables, supplement and title-page pdfLaTeX/Biber builds: passed without final compilation warnings/errors.
-- Main PDF extracted prose: approximately 5,866 words before references; references approximately 887; 3 figures + 5 tables at 250 words each = +2,000; **planning estimate 8,753**, below IJIEOM 9,000. This is a PDF extraction estimate, not journal adjudication.
+- Main PDF extracted prose: approximately 5,798 words before references; references approximately 888; 3 figures + 5 tables at 250 words each = +2,000; **planning estimate 8,686**, below IJIEOM 9,000. This is a PDF extraction estimate, not journal adjudication.
 - Author names absent from main article source; identifying public repository URL withheld from main.
 - Main local \ref labels: all resolved. Both main and supplementary citation keys exist in retained 131-entry BibTeX file.
 - All 10 source tables, 4 figures and 2 algorithms assigned to main or supplement; originals archived.
