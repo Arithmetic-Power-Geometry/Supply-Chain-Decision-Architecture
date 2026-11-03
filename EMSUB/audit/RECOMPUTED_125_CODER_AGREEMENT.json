@@ -1,0 +1,92 @@
+{
+  "status": "MATCH",
+  "basis": "independent local computation from user-uploaded workbook; source workbook not yet committed to repository",
+  "workbook": "SCDA_Coder_A_Coder_B_Adjudication_Datasets_FINAL(3).xlsx",
+  "matched_record_ids": 125,
+  "missing_value_policy": "blank as explicit category",
+  "reference": "data/Final_SCM/Cohen_Kappa_125_FINAL.csv",
+  "results": [
+    {
+      "dimension": "decision_level",
+      "n": 125,
+      "raw_agreement": 0.448,
+      "cohen_kappa": 0.035666,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "process",
+      "n": 125,
+      "raw_agreement": 0.288,
+      "cohen_kappa": 0.07469,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "flow",
+      "n": 125,
+      "raw_agreement": 0.64,
+      "cohen_kappa": 0.53984,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "objective",
+      "n": 125,
+      "raw_agreement": 0.6,
+      "cohen_kappa": 0.493271,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "theory",
+      "n": 125,
+      "raw_agreement": 0.864,
+      "cohen_kappa": 0.205607,
+      "blank_a": 107,
+      "blank_b": 121,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "method",
+      "n": 125,
+      "raw_agreement": 0.504,
+      "cohen_kappa": 0.227626,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "technology",
+      "n": 125,
+      "raw_agreement": 0.896,
+      "cohen_kappa": 0.712237,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "evidence_maturity",
+      "n": 125,
+      "raw_agreement": 0.592,
+      "cohen_kappa": 0.3632,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    },
+    {
+      "dimension": "context",
+      "n": 125,
+      "raw_agreement": 0.488,
+      "cohen_kappa": 0.177293,
+      "blank_a": 0,
+      "blank_b": 0,
+      "matched_frozen_summary": true
+    }
+  ],
+  "caveat": "Agreement values reproduce numerically; human coder identities, independent pre-adjudication provenance and original handoff-gate compliance not authenticated."
+}
