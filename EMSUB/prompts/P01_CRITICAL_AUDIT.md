@@ -1,0 +1,5 @@
+# P01 — Critical research and journal audit
+
+Read the latest provided author and blinded LaTeX ZIPs, SCDA(5).pdf, SCDAB.pdf, and the GitHub frozen results. Verify the current IJIEOM author guidelines. Audit reviewer-grade scientific objections, coding reliability, novelty, null tests, validation, unmeasured organisational outcomes, sampling, bibliographic integrity, anonymisation, references, tables, figures, algorithms, and word budget. Compare numbers against frozen final JSON/CSV. Do not invent new findings or relabel poor agreement as strong.
+
+**Execution 2026-11-03:** Source and journal audit completed. Scientific concerns flagged, with core reliability and temporal-generalisation barriers remaining unresolved. See ../audit/CRITICAL_REVIEW.md. Proceed to P02 without changing frozen scientific numbers.
