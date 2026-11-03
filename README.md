@@ -67,6 +67,12 @@ A 5,000-replicate permutation diagnostic shows that adding independently permute
 
 Across 500 publication-cluster bootstrap replicates, K4 is never selected; KS7 is selected 40.4%, KSV8 23.0%, and SCDA9 36.6%. The evidence supports a layered decision-and-solution representation while treating the precise outer-layer boundary as contingent on coding, sample composition, and analytical purpose.
 
+## Reviewer-facing research materials
+
+For a concise, manuscript-aligned entry point, see the **[SCDA research and reproducibility release](reviewer-release/README.md)**. It brings together the study design, reported results, links to available research data and executable programs, and [methodological limitations](reviewer-release/LIMITATIONS.md).
+
+This curated view is provided to make the evidence easier to navigate. The original repository records and Git history are retained. Some original source workbooks are not yet confirmed in the GitHub evidence deposit, so the release does not claim complete standalone reproduction.
+
 ## Reproducibility
 
 The repository preserves the evidence trail and computational materials used to evaluate SCDA, including screening records, frozen claim data, coding artifacts, architecture-comparison outputs, ablation and sensitivity analyses, holdouts, matched-case diagnostics, robustness analyses, and workflow-generated artifacts.
